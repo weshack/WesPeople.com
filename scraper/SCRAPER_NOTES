@@ -1,0 +1,8 @@
+The code for the wesconnect scraping spider lives here.
+
+Make sure you install scrapy (should be installed the pip requirements file).
+
+Run the scraper with:
+
+    `scrapy crawl wesconnect -o outputfile.csv -t csv --logfile=logfile.log`
+
