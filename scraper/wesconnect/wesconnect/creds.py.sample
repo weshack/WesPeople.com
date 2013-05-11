@@ -1,0 +1,4 @@
+# Fill in your Wesconnect credentials and copy them to creds.py in this directory.
+
+WESCONNECT_USERNAME = "myusername"
+WESCONNECT_PASSWORD = "mypassword"
