@@ -59,7 +59,7 @@ with open('alums50-13.csv') as csvfile:
     address_counter[address] += 1
 
 
-geocode_count = 1710
+geocode_count = 3010
 for address in address_counter.most_common(geocode_count):
   if address[0] not in addresses:
     result = geocode(address[0])
