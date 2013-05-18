@@ -52,7 +52,7 @@ class Person(models.Model):
   objects = models.GeoManager()
 
   def __unicode__(self):
-    if self.name:
-      return self.name
+    if self.first_name and self.last_name:
+      return self.last_name + ", " + self.first_name
     else:
       return u"Person object pk=%s" % self.pk
