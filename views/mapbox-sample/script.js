@@ -1,5 +1,5 @@
 // Create and load map
-$('#map').mapbox('examples.map-zr0njcqy', function(map, tilejson) {
+$('#map').mapbox('ehc.map-shm0r7pp', function(map, tilejson) {
 
     map.setZoomRange(0, 15);
 
