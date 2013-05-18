@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Diego', 'dcalderon@wesleyan.edu'),
 )
 
 MANAGERS = ADMINS
