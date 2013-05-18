@@ -53,5 +53,7 @@ class Person(models.Model):
   latitude = models.PointField(null=True, blank=True)
   longitude = models.PointField(null=True, blank=True)
 
+  location = models.PointField(null=True, blank=True)
+
   # Override the default manager with GeoManager instance
   objects = models.GeoManager()
