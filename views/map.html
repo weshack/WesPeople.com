@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>WesPeople: Connecting the Wesleyan Network Everywhere!</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<!-- Mapbox CSS-->
+    <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
+    <link href="mapbox-sample/css/mapbox.share.css" rel="stylesheet" type="text/css">
+    <link href="mapbox-sample/css/style.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    
+    <!-- Mapbox JS -->
+    <!-- <script type="text/javascript" src="mapbox-sample/ext/jquery.min.js"></script> -->
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.uncompressed.js'></script>
+    <script type="text/javascript" src="mapbox-sample/ext/mapbox.jquery.geocoder.js"></script>
+    <script type="text/javascript" src="mapbox-sample/ext/mapbox.jquery.js"></script>
+    <script type="text/javascript" src="mapbox-sample/ext/mapbox.share.js"></script>
+             <script type="text/javascript" src="mapbox-sample/script.js"></script>
+
+    
+</head>
+<body>
+  
+    <div id="main-maps">
+      <header id="topBar" class="container">
+      <a href="#" id="logo"><img src="wespeople-logo.png"></a>
+      <form action="" method="post">
+        <input type="text" class="text" value="" name="" placeholder="Search" />
+      </form>
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><i class="icon-user"> Your Profile</i></a>
+            </li>
+            <li>
+            <a href="#"><i class="icon-cog"> Settings</i></a>
+            </li>
+            <li>
+              <a href="index.html">Sign Out</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <aside id="search-box">
+        <div class="container">
+          <h1>Search for Wesleyan people:</h1>
+          <h3>There are 41,000 of us so far.</h3>
+          <form action="" method="post">
+            <input type="text" placeholder="Search by address, city, zip, country, etc.(e.g. 06459 or Middletown, CT)" name="" value="" />             
+            <label>Class Year:</label>
+              <select id="classyear">
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+              </select>
+
+            <label>Major:</label>
+            <select id="major">
+              <option value="American Studies">American Studies</option>
+              <option value="Computer Science">Computer Science</option>
+            </select>
+            <label>Industry/Career:</label>
+            <select id="industry">
+              <option value="American Studies">American Studies</option>
+              <option value="Computer Science">Computer Science</option>
+            </select>
+            <input type="checkbox" name="" value="" />Interested in Contact
+          </form>
+          <a href="#" class="button">Search!</a>
+        </div>
+      </aside>
+      <section id="content-body" class="container">
+        <aside id="list-view">
+          <ul>
+            <li class="user">
+            <h3><a href="#">Lisa Sy</a></h3>
+            <p>Class of 2013</p>
+            <p>American Studies</p>
+            <p>Design/Tech</p>
+            <p>San Francisco, CA</p>
+            </li>
+            <li class="user">
+            <h3><a href="#">Lisa Sy</a></h3>
+            <p>American Studies</p>
+            <p>Design/Tech</p>
+            <p>San Francisco, CA</p>
+            </li>
+          </ul>
+          </aside>
+          <div id="map-view">
+          <!-- <div class="map" id="map"></div> -->
+          <iframe width='600' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/lisasy.map-y6rx0nct.html#4/35.29999999999999/-98.42999999999998'></iframe>
+          </div>
+      </section>
+      <footer>
+      <div class="container">
+        <p>A WesHack 2013 project by 4 people.</p>
+      </div>
+      </footer>
+    </div>
+  
+</body>
+</html>
+
