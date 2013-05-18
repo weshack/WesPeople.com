@@ -1,5 +1,9 @@
 from django.contrib.gis.db import models
 
+class PersonLocationManager(models.GeoManager):
+  def get_query_set(self):
+    return super(PersonLocationManager, self).get_query_set().filter(location__isnull=False)
+
 # Create your models here.
 class Person(models.Model):
   # define the fields for your item here like:
@@ -50,6 +54,9 @@ class Person(models.Model):
 
   # Override the default manager with GeoManager instance
   objects = models.GeoManager()
+
+  people = models.Manager()
+  geolocated = PersonLocationManager()
 
   def __unicode__(self):
     if self.first_name and self.last_name:
