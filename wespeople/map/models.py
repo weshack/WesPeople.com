@@ -13,15 +13,11 @@ class Person(models.Model):
   country = models.CharField(max_length=100, null=True, blank=True)
 
   #wesleyan education
-  wesleyan_degree_school_1 = models.CharField(max_length=100, null=True,
-      blank=True)
-  wesleyan_degree_year_1 = models.CharField(max_length=100, null=True,
-      blank=True)
+  wesleyan_degree_school_1 = models.CharField(max_length=100, null=True, blank=True)
+  wesleyan_degree_year_1 = models.CharField(max_length=100, null=True, blank=True)
   wesleyan_degree_1 = models.CharField(max_length=100, null=True, blank=True)
-  wesleyan_degree_1_major_1 = models.CharField(max_length=100, null=True,
-      blank=True)
-  wesleyan_degree_1_major_2 = models.CharField(max_length=100, null=True,
-      blank=True)
+  wesleyan_degree_1_major_1 = models.CharField(max_length=100, null=True, blank=True)
+  wesleyan_degree_1_major_2 = models.CharField(max_length=100, null=True, blank=True)
   wesleyan_degree_1_major_3 = models.CharField(max_length=100, null=True)
 
   # member information
@@ -50,8 +46,10 @@ class Person(models.Model):
   industry = models.CharField(max_length=100, null=True, blank=True)
 
   #geolocation
-  latitude = models.PointField(null=True, blank=True)
-  longitude = models.PointField(null=True, blank=True)
+  location = models.PointField(null=True, blank=True)
 
   # Override the default manager with GeoManager instance
   objects = models.GeoManager()
+
+  def __unicode__(self):
+    return self.name
