@@ -1,0 +1,85 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "grid-settings";
+
+/************* Colors **************/
+$first: #bbb;
+$second: #ddd;
+$third: #eee;
+
+// Grid
+.container{
+  @include outer-container;
+  #landing-signin{
+    @include span-columns(6 or 12);
+    @include shift(3);
+    #initialSignLogIn{
+      @include row();
+      .alternative{
+        @include row();
+      }
+    }
+  }
+}
+
+
+/*------------- Global --------------*/
+body{
+  font-family: $lucida-grande;
+}
+
+/*---------- Buttons ----------*/
+a.button{
+  @include button();
+  text-align: center;
+}
+
+/*--------- Sign Up/Log In Forms -------*/
+#landing-signin{
+  h1,h2,h3{text-align: center;}
+}
+
+#initialSignLogIn{
+  input,a.button{
+    margin-bottom: 20px;
+  }
+  .alternative{
+    @include pad(30px);
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid $first;
+    margin: auto -30px -30px -30px;
+    text-align:center;
+  }
+}
+
+#{$all-text-inputs}{
+  @include transition(all 0.5s linear);
+  border-radius: 6px;
+  border: 1px solid $first;
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 10px #9ecaed;
+    border: 1px solid #9ecaed;
+  }
+}
+
+#{$all-text-inputs},a.button{
+  font-size: golden-ratio(10px, 1);
+  padding: 20px;
+  width: 100%;
+}
+
+.box{
+  @include linear-gradient($third, $second);
+  @include pad(30px);
+  border-radius: 10px;
+  border: 1px solid $first;
+  height: 100%;
+}
+
+// for Jquery
+.signup-container{
+  display: none;
+}
