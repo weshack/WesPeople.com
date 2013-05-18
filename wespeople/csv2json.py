@@ -57,14 +57,7 @@ for row in reader:
         active_field = row[i+1]
 
         # convert numeric strings into actual numbers by converting to either int or float
-        if active_field.isdigit():
-            try:
-                new_number = int(active_field)
-            except ValueError:
-                new_number = float(active_field)
-            fields[header_row[i+1]] = new_number
-        else:
-            fields[header_row[i+1]] = active_field.strip()
+        fields[header_row[i+1]] = active_field.strip()
 
     row_dict = {}
     row_dict["pk"] = int(pk)
