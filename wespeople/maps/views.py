@@ -10,8 +10,8 @@ def map_test(request):
     """
     display something
     """
-    
-    
+
+
     template_values = {'test': 'test',}
-    
-    return render_to_response('map-test.html', template_values)
+
+    return render_to_response('maps-test.html', template_values)
