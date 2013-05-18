@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, redirect
 from django.http import HttpResponse, HttpRequest
 from django.db import models
 
-from map.models import *
+from maps.models import *
 
 
 def map_test(request):
