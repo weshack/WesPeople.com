@@ -1,9 +1,15 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.gis import admin
+from tastypie.api import Api
+from maps.api import GeoPerson
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 admin.autodiscover()
+
+geoperson = GeoPerson()
+v1_api = Api(api_name='v1')
+v1_api.register(geoperson)
 
 urlpatterns = patterns('',
     # Examples:
@@ -16,4 +22,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     (r'^index/$', 'map.views.map_test'),
+    url(r'^api/', include(v1_api.urls)),
 )
