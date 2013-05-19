@@ -7,12 +7,12 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet' />
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
     <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css" />
     <link href="/static/stylesheets/MarkerCluster.Default.css" rel="stylesheet" type="text/css" />
     <link href="/static/stylesheets/MarkerCluster.css" rel="stylesheet" type="text/css" />
     <link href="/static/stylesheets/map.css" rel="stylesheet" type="text/css" />
 
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
     <script type="text/javascript" src="//use.typekit.net/leb2ulb.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" src="/static/js/leaflet.markercluster.js"></script>
@@ -23,7 +23,7 @@
       <header id="topBar" class="container">
       <a href="#" id="logo"><img src="/static/img/wespeople-logo.png"></a>
       <form action="" method="post">
-        <input type="text" class="text" value="" name="" placeholder="Search" />
+        <input type="text" id="location-search" class="text" value="" name="" placeholder="Search" />
       </form>
         <nav>
           <ul>
