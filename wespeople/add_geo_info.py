@@ -7,7 +7,7 @@ from django.contrib.gis.geos.point import Point
 
 count = 0
 
-from map.models import Person
+from maps.models import Person
 
 pickle_file = "addresses.pickle"
 f = open(pickle_file, "rb")
