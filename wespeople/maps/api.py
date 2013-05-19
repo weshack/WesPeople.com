@@ -19,7 +19,7 @@ class PersonResource(ModelResource):
       'wesleyan_degree_1_major_3': ('exact', 'startswith'),
     }
 
-    limit = 100
+    limit = 0
     #list_allowed_methods = ['get', 'post']
     #authorization = ReadOnlyAuthorization
 
