@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.gis import admin
 from django.conf.urls.defaults import *
+from django.conf.urls.static import static
 from tastypie.api import Api
 from maps.api import PersonResource
 from maps.models import Person
@@ -25,11 +26,15 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^filter/$', 'maps.views.search'),
     url(r'^api/', include(people.urls)),
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-                {'document_root': settings.MEDIA_ROOT}),
     (r'^accounts/login/$', login,
             {'template_name':'login.html'}),
     (r'^accounts/logout/$', logout,
             {'next_page': '/accounts/login'}),
     (r'^$', 'maps.views.index'),
-)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^static-admin/media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.ADMIN_MEDIA_ROOT, 'show_indexes': True}),
+    )
