@@ -100,7 +100,7 @@ TEMPLATE_LOADERS = (
 
 
 TEMPLATE_DIRS = (
-    PROJECT_PATH + '/wespeople/templates/',
+    PROJECT_PATH + '/templates/',
 )
 
 MIDDLEWARE_CLASSES = (

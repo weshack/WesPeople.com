@@ -23,14 +23,13 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    (r'^index/$', 'maps.views.map_test'),
     (r'^filter/$', 'maps.views.search'),
-    (r'^map/$', 'maps.views.map_test'),
     url(r'^api/', include(people.urls)),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
                 {'document_root': settings.MEDIA_ROOT}),
-    (r'^accounts/login/$', login, 
+    (r'^accounts/login/$', login,
             {'template_name':'login.html'}),
     (r'^accounts/logout/$', logout,
             {'next_page': '/accounts/login'}),
+    (r'^$', 'maps.views.index'),
 )
