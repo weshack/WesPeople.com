@@ -208,6 +208,7 @@ header#topBar{
     height: auto;
   }
   form{
+    
     margin-bottom: 20px;
     input{
       padding: 6px 20px;
@@ -257,56 +258,30 @@ header#topBar{
 
 #content-body{
   aside#list-view{
-    background: rgba(37,67,89,0.8);
     z-index: 1000000;
+    background: rgba(37,67,89,1.0);
     position: absolute;
     color: white;
     left:0;
     .title{
-      margin-top: -18px;
-      width: 160%;
-      background: rgba(37,67,89,1.0);
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding:0;
+      // width: 160%;
       h2{
         padding: 10px 20px;
       }
     }
-    ul{
-      width: 100%;
-      margin-top: -18px;
-      padding: 0;
-      li{list-style-type:none;}
-      li.user a{
-        color: white;
-        @include row();
-        border-bottom: 1px solid $first;
-        pUsadding-left: 20px;
-        p{
-          margin: 0 auto;
-          font-size: golden-ratio(10px,1);
-          font-weight: 200;
-        }
-        h3{
-        }        margin-bottom: 6px;
-        }
-        &:hover{
-          background: $teal;
-        }
-      }
-    }
   }
-  div#map-view{
-    // border: 4px solid $first;
-  }
-
-
+}
 #map{
-  border-top: 8px solid $darkblue;
-   position:absolute; 
    bottom:0; 
    width:100%;
+  border-top: 8px solid $darkblue;
+  position:absolute; 
 }
 
-#map,#content-body{
+#map, #list-view{
   top:130px;
 }
 
@@ -346,7 +321,7 @@ footer .container{
 
 /* ------- RESPONSIVE -----------*/
 
-#map{
+#map,#list-view{
   @include media(max-width 1170px){
     top: 160px;
   }
