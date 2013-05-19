@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.contrib.gis.db import models
 
 class PersonLocationManager(models.GeoManager):
@@ -64,6 +65,8 @@ class Person(models.Model):
   geolocated = PersonLocationManager()
   names = PersonNameManager()
 
+  user = models.OneToOneField(User)
+
   def makeName(self):
     n = self.name.split(',')
     self.first_name = n[1]
@@ -77,3 +80,6 @@ class Person(models.Model):
       return self.last_name + ', ' + self.first_name
     else:
       return u"Person object pk=%s" % self.pk
+
+class AuthUser(models.Model):
+  person = models.OneToOneField(Person, primary_key=True)
