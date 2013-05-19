@@ -1,119 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>WesPeople: Connecting the Wesleyan Network Everywhere!</title>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet' />
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
-    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css" />
-    <link href="/static/stylesheets/MarkerCluster.Default.css" rel="stylesheet" type="text/css" />
-    <link href="/static/stylesheets/MarkerCluster.css" rel="stylesheet" type="text/css" />
-    <link href="/static/stylesheets/map.css" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript" src="//use.typekit.net/leb2ulb.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script type="text/javascript" src="/static/js/leaflet.markercluster.js"></script>
-    <script type="text/javascript">
-      var from_year;
-      var to_year;
-      {% if from_year %}
-      from_year = {{ from_year }}
-      {% endif %}
-      {% if to_year %}
-      to_year = {{ to_year }}
-      {% endif %}
-
-
-      jQuery(document).ready(function($){
-        markers = new L.MarkerClusterGroup();
-        if (from_year && to_year) {
-          var url = "/api/geoperson?preferred_class_year__range=" + from_year + "," + to_year;
-        } else if (from_year) {
-          var url = "/api/geoperson?preferred_class_year=" + from_year;
-        } else {
-          var url = "/api/geoperson?preferred_class_year__gte=2000"
-        }
-        load_people(url, "");
-        jQuery('#location-search').submit(function(e) {
-            var s = $('#myForm :input');
-            console.log(s);
-            e.preventDefault();
-            $.getJSON(("http://open.mapquestapi.com/geocoding/v1/address?key=Fmjtd%7Cluub2dutn9%2Cbn%3Do5-9u25gr&location=" + s + "&callback=renderGeocode"), function(data) {
-              console.log(data);
-                var values = {};
-                    s.each(function() {
-                              values[this.name] = $(this).val();
-                                  });
-
-            });
-            return false;
-        });
-      });
-
-    </script>
-
-  </head>
-<body>
-  
+{% extends "base.html" %}
+  {% block content %}
     <div id="main-maps">
       <header id="topBar" class="container">
       <a href="#" id="logo"><img src="/static/img/wespeople-logo.png"></a>
       <form action="/filter" method="get">
-        <input type="text" id="location-search" class="text" value="" name="general" placeholder="Search for Wesleyan people by zipcode or city." /> 
+        <ul>
+        <li>
             <label>Class Year:</label>
               <select id="classyear">
-                <option value="all">all</option>
+                <option value="all">All Grad Year</option>
                 <option value="2013">2013</option>
                 <option value="2012">2012</option>
                 <option value="2011">2011</option>
                 <option value="2010">2010</option>
               </select>
+              </li>
 
+              <li>
             <label>Major:</label>
             <select id="major">
-              <option value="all">all</option>
+              <option value="all">All Majors</option>
               <option value="American Studies">American Studies</option>
               <option value="Computer Science">Computer Science</option>
             </select>
+            </li>
+            <li>
             <label>Industry/Career:</label>
             <select id="industry">
-              <option value="all">all</option>
+              <option value="all">All Careers</option>
               <option value="American Studies">American Studies</option>
               <option value="Computer Science">Computer Science</option>
             </select>
+            </li>
+          </ul>
       </form>
         <a href="#" class="button" type="submit">Find people!</a>
-        
-        <!-- <nav> -->
-        <!--   <ul> -->
-        <!--     <li> -->
-        <!--       <a href="#">Your Profile</a> -->
-        <!--     </li> -->
-        <!--     <li> -->
-        <!--     <a href="#">Settings</a> -->
-        <!--     </li> -->
-        <!--     <li> -->
-        <!--       <a href="index.html">Sign Out</a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </nav> -->
-        </header>
 
-      <!-- <aside id="search-box"> -->
-      <!--   <div class="container"> -->
-      <!--     <form action="/filter" method="get"> -->
-            <!-- <input type="text" placeholder="Search for Wesleyan people by zipcode or city." name="general" value="" />              -->
-            <!-- <input type="checkbox" name="" value="">Interested in Contact</input> -->
-			<!-- <button type="submit" class="button">Find people!</button> -->
-          <!-- </form> -->
-			<!-- {{ message }} -->
-          
-        <!-- </div> -->
-        <!-- </aside> -->
-        
+        </header>
       <section id="content-body">
             <div id="map"></div>
         <aside id="list-view">
@@ -145,7 +68,7 @@
       var map = L.mapbox.map('map', mapId).setView([38.230062591265984, -98.50], 4);
       map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp'));
 </script> 
-    <script type="text/javascript" src="/static/js/script.js"></script>
+    {% endblock %}
 </body>
 </html>
 

@@ -171,10 +171,11 @@ a.button{
 /*------ Top Navigation Bar ------*/
 header#topBar{
   @include row();
-  @include pad(10px default);
+  @include pad(0px default);
   // border-bottom: 4px solid $charcoal;
   a#logo img{
     // @include size(300px auto);
+    margin-top: 10px;
     @include span-columns(3 of 12);
     float:left;
   }
@@ -183,14 +184,21 @@ header#topBar{
     @include span-columns(6 of 12);
     @include shift(1);
     @include row();
-    input{
-      padding: 4px 10px;
-      @include span-columns(5 of 7);
+    ul{
+      float: left;
+      li{
+        list-style-type: none;
+        label{display: block;}
+        display: inline-block;
+        margin-left: 30px;
+      }
     }
+}
     a.button{
       float: right;
-      @include span-columns(1);
-      padding: 4px 8px;
+      margin-top: 10px;
+      @include span-columns(2);
+      padding: 10px 8px;
       font-weight: 200;
       background: $teal;
       border:none;
@@ -198,8 +206,8 @@ header#topBar{
       &:hover{
         background: darken($teal, 5%);
       }
-    }
   }
+
   nav{
     @include inlineBar(right, 10px);
     ul{
