@@ -44,6 +44,9 @@ def filter_year(request, from_year, to_year=""):
     template_values = {'from_year': from_year, 'to_year' : to_year}
 
     return render_to_response('maps/index.html', template_values)
+def about(request):
+
+    return render_to_response('maps/about.html')
 
 def search(request):
     """
