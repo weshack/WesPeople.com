@@ -47,7 +47,7 @@ def filter_near(request, location, distance=100):
 
     pnt = fromstr("POINT(%s %s)" % (lng, lat))
 
-    people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))
+    people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))[0:50]
     ids = [p.pk for p in people]
 
     template_values = {'people': people, 'distance' : distance, 'location' :
