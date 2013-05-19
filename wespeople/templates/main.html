@@ -21,8 +21,10 @@
   </head>
 <body id="{% block body_id %}{% endblock %}">
   <div class="container"> 
+    {% include "partials/navigation-links" %}
     {% block body %}
     {% endblock %}
+    {% include "partials/footer" %}
   </div>
 </body>
 </html>
