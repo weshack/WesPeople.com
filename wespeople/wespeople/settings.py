@@ -164,3 +164,5 @@ LOGGING = {
         },
     }
 }
+
+from prod_settings import *
