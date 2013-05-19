@@ -67,6 +67,10 @@
 #main-maps aside#search-box {
   *zoom: 1;
   display: block;
+  display: block;
+  float: left;
+  margin-right: 2.12766%;
+  width: 100%;
 }
 /* line 18, ../sass/bourbon/addons/_clearfix.scss */
 #main-maps aside#search-box:before, #main-maps aside#search-box:after {
@@ -77,7 +81,11 @@
 #main-maps aside#search-box:after {
   clear: both;
 }
-/* line 32, ../sass/style.scss */
+/* line 41, ../sass/neat/grid/_span-columns.scss */
+#main-maps aside#search-box:last-child {
+  margin-right: 0;
+}
+/* line 33, ../sass/style.scss */
 #main-maps section#content-body {
   *zoom: 1;
   display: block;
@@ -91,30 +99,19 @@
 #main-maps section#content-body:after {
   clear: both;
 }
-/* line 34, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 #main-maps section#content-body aside#list-view {
   display: block;
   float: left;
   margin-right: 2.12766%;
-  width: 31.91489%;
+  width: 23.40426%;
 }
 /* line 41, ../sass/neat/grid/_span-columns.scss */
 #main-maps section#content-body aside#list-view:last-child {
   margin-right: 0;
 }
-/* line 37, ../sass/style.scss */
-#main-maps section#content-body div#map-view {
-  display: block;
-  float: left;
-  margin-right: 2.12766%;
-  width: 65.95745%;
-}
-/* line 41, ../sass/neat/grid/_span-columns.scss */
-#main-maps section#content-body div#map-view:last-child {
-  margin-right: 0;
-}
 
-/* line 43, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 footer {
   display: block;
   float: left;
@@ -127,53 +124,54 @@ footer:last-child {
 }
 
 /*------------- Global --------------*/
-/* line 49, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 body, html {
   height: 100%;
-  margn: 0;
+  margin: 0;
   padding: 0;
 }
 
-/* line 55, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 body {
-  font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+  font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444444;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 h1 {
   font-size: 33.88641px;
 }
 
-/* line 61, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 h2 {
   font-size: 20.94339px;
 }
 
-/* line 62, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 h3 {
   font-size: 19.416px;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 p {
   font-size: 14.562px;
 }
 
-/* line 67, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 a {
   color: #1db89c;
+  text-decoration: none;
   -webkit-transition: all, 0.25s, ease-in-out;
   -moz-transition: all, 0.25s, ease-in-out;
   transition: all, 0.25s, ease-in-out;
 }
-/* line 70, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 a:hover {
   color: #137664;
 }
 
 /*---------- Buttons ----------*/
-/* line 76, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 a.button {
   border: 1px solid #0d816c;
   border-radius: 3px;
@@ -213,7 +211,7 @@ a.button:disabled {
 }
 
 /*--------- Sign Up/Log In Forms -------*/
-/* line 82, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .background-gradient {
   margin: -5px;
   padding-bottom: 160px;
@@ -225,15 +223,15 @@ a.button:disabled {
   background: linear-gradient( white, #efefef) left repeat;
 }
 
-/* line 92, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 #landing-signin {
   margin-top: 30px;
 }
-/* line 94, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 #landing-signin h1, #landing-signin h2, #landing-signin h3 {
   text-align: center;
 }
-/* line 96, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 #landing-signin header img {
   display: block;
   float: left;
@@ -248,16 +246,16 @@ a.button:disabled {
   margin-right: 0;
 }
 
-/* line 106, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 #initialSignLogIn {
   margin-top: 50px;
 }
-/* line 108, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 #initialSignLogIn input, #initialSignLogIn a.button {
   margin-bottom: 20px;
   display: block;
 }
-/* line 112, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 #initialSignLogIn .alternative {
   padding: 30px;
   background: white;
@@ -268,7 +266,7 @@ a.button:disabled {
   text-align: center;
 }
 
-/* line 123, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
@@ -276,26 +274,26 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   border-radius: 6px;
   border: 1px solid #bbbbbb;
 }
-/* line 127, ../sass/style.scss */
+/* line 129, ../sass/style.scss */
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus {
   outline: none;
   box-shadow: 0 0 10px #9ecaed;
   border: 1px solid #9ecaed;
 }
 
-/* line 134, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], a.button {
   font-size: 16.18px;
   padding: 20px;
   width: 100%;
 }
 
-/* line 140, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 a.button {
   width: auto;
 }
 
-/* line 144, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 .box {
   background-color: #efefef;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #ececec));
@@ -307,14 +305,14 @@ a.button {
   height: 100%;
 }
 
-/* line 153, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 .signup-container {
   display: none;
 }
 
 /*------- Mixins ----------*/
 /*------ Top Navigation Bar ------*/
-/* line 169, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 header#topBar {
   *zoom: 1;
   display: block;
@@ -329,7 +327,7 @@ header#topBar:before, header#topBar:after {
 header#topBar:after {
   clear: both;
 }
-/* line 173, ../sass/style.scss */
+/* line 175, ../sass/style.scss */
 header#topBar a#logo img {
   display: block;
   float: left;
@@ -341,48 +339,50 @@ header#topBar a#logo img {
 header#topBar a#logo img:last-child {
   margin-right: 0;
 }
-/* line 178, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 header#topBar form {
   display: block;
   float: left;
   margin-right: 2.12766%;
-  width: 23.40426%;
+  width: 14.89362%;
   margin-left: 25.53191%;
 }
 /* line 41, ../sass/neat/grid/_span-columns.scss */
 header#topBar form:last-child {
   margin-right: 0;
 }
-/* line 181, ../sass/style.scss */
+/* line 183, ../sass/style.scss */
 header#topBar form input {
   padding: 4px 10px;
 }
-/* line 159, ../sass/style.scss */
+/* line 161, ../sass/style.scss */
 header#topBar nav ul {
   float: right;
 }
-/* line 161, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 header#topBar nav ul li {
   margin-left: 10px;
   display: inline;
   list-style-type: none;
 }
-/* line 188, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 header#topBar nav ul li:last-child {
   margin-right: 0;
 }
 
 /*------- MAIN MAP BODY CONTENT -------*/
-/* line 197, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 aside#search-box {
+  position: absolute;
+  z-index: 1000000;
   border-bottom: 1px solid #efefef;
-  padding: 40px;
-  background-color: #efefef;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #ececec));
-  background-image: -webkit-linear-gradient(#efefef, #ececec);
-  background-image: linear-gradient(#efefef, #ececec);
+  padding: 20px;
+  background-color: #ececec;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #efefef));
+  background-image: -webkit-linear-gradient(#ececec, #efefef);
+  background-image: linear-gradient(#ececec, #efefef);
 }
-/* line 202, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 aside#search-box form {
   display: block;
   float: left;
@@ -393,16 +393,16 @@ aside#search-box form {
 aside#search-box form:last-child {
   margin-right: 0;
 }
-/* line 204, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 aside#search-box form input[type="email"], aside#search-box form input[type="number"], aside#search-box form input[type="password"], aside#search-box form input[type="search"], aside#search-box form input[type="tel"], aside#search-box form input[type="text"], aside#search-box form input[type="url"], aside#search-box form input[type="color"], aside#search-box form input[type="date"], aside#search-box form input[type="datetime"], aside#search-box form input[type="datetime-local"], aside#search-box form input[type="month"], aside#search-box form input[type="time"], aside#search-box form input[type="week"] {
-  font-size: 26.17924px;
-  padding: 20px 30px;
+  font-size: 16.18px;
+  padding: 10px 20px;
 }
-/* line 208, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 aside#search-box form input[type="text"] {
   margin-bottom: 20px;
 }
-/* line 212, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 aside#search-box a.button {
   border: 1px solid #0d816c;
   border-radius: 3px;
@@ -450,17 +450,40 @@ aside#search-box a.button:disabled {
 aside#search-box a.button:last-child {
   margin-right: 0;
 }
-/* line 219, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 aside#search-box select {
+  display: inline-block;
+  font-size: 16.18px;
   position: relative;
   margin-right: 30px;
 }
+/* line 232, ../sass/style.scss */
+aside#search-box select option {
+  font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-/* line 229, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
+#content-body aside#list-view {
+  background: rgba(37, 67, 89, 0.8);
+  z-index: 1000000;
+  position: absolute;
+  color: white;
+  top: 210px;
+}
+/* line 245, ../sass/style.scss */
+#content-body aside#list-view .title {
+  margin-top: -20px;
+  background: rgba(37, 67, 89, 0.8);
+}
+/* line 248, ../sass/style.scss */
+#content-body aside#list-view .title h2 {
+  padding: 10px 20px;
+}
+/* line 253, ../sass/style.scss */
 #content-body aside#list-view ul li.user {
   *zoom: 1;
   display: block;
-  padding: 10px;
+  margin-left: 0px;
   border-bottom: 1px solid #bbbbbb;
 }
 /* line 18, ../sass/bourbon/addons/_clearfix.scss */
@@ -472,17 +495,23 @@ aside#search-box select {
 #content-body aside#list-view ul li.user:after {
   clear: both;
 }
-/* line 234, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 #content-body aside#list-view ul li.user p {
   margin-bottom: 0px;
+  font-size: 16.18px;
+  font-weight: 200;
 }
-/* line 240, ../sass/style.scss */
-#content-body div#map-view {
-  border: 4px solid #bbbbbb;
+
+/* line 275, ../sass/style.scss */
+#map {
+  position: absolute;
+  top: 210px;
+  bottom: 0;
+  width: 100%;
 }
 
 /*------- Footer ---------*/
-/* line 246, ../sass/style.scss */
+/* line 283, ../sass/style.scss */
 footer .container {
   margin-top: 40px;
   border-top: 1px solid #bbbbbb;

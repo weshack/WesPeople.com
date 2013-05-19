@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.gis import admin
+from django.conf.urls.defaults import *
 from tastypie.api import Api
 from maps.api import PersonResource
+from maps.models import Person
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin

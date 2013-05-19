@@ -10,9 +10,9 @@ class PersonResource(ModelResource):
     #list_allowed_methods = ['get', 'post']
     #authorization = ReadOnlyAuthorization
 
-    def get_object_list(self, request):
-      return super(PersonResource, self).get_object_list(request).filter(location__isnull=False)
+    #def get_object_list(self, request):
+    #  return super(PersonResource, self).get_object_list(request).filter(location__isnull=False)
 
-    filtering = {
-        'first_name': ALL,
-        }
+    #filtering = {
+    #    'first_name': ALL,
+    #    }
