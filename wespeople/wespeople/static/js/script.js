@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
     });
   });
 
-  markers = new L.MarkerClusterGroup({ singleMarkerMode : true});
+  markers = new L.MarkerClusterGroup();
   load_people("/api/geoperson?preferred_class_year__gte=2000", "");
 
 });
@@ -21,10 +21,11 @@ function load_people(filters, url) {
       jQuery.each(data.objects, function (key, val) {
         lng = val.location.coordinates[0];
         lat = val.location.coordinates[1];
-        name = val.name;
+        name = val.first_name + " " + val.last_name;
+        year = val.preferred_class_year
         var marker = new L.marker([lat, lng]);
         // var marker = L.circleMarker([lat, lng], 200)
-        marker.bindPopup(name);
+        marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + "</p>");
         markers.addLayer(marker);
       });
     map.addLayer(markers); 
