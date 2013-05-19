@@ -131,7 +131,6 @@ INSTALLED_APPS = (
 
     'south',
     'tastypie',
-    'djgeojson',
 )
 
 # A sample logging configuration. The only tangible logging
