@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-/* line 12, ../sass/map.scss */
-.leaflet-left {
-  display: none;
-}
-
 /* line 16, ../sass/map.scss */
 .leaflet-container {
   font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
