@@ -22,7 +22,17 @@ def index(request):
     Display the main index map page, with option to filter by year
     """
 
-    template_values = {}
+
+    years = [p.preferred_class_year for p in Person.geolocated.distinct('preferred_class_year')]
+    majors_list = [p.wesleyan_degree_1_major_1 for p in Person.geolocated.distinct('wesleyan_degree_1_major_1')]
+    majors = []
+    for major in majors_list:
+      if major != "":
+        majors.append(major)
+
+    industries = [p.industry for p in Person.geolocated.distinct('industry')]
+
+    template_values = {'years': years, 'majors': majors, 'industries' : industries}
 
     return render_to_response('maps/index.html', template_values)
 
@@ -39,6 +49,18 @@ def search(request):
     """
     Location string to geocode from mapquest. Distance in miles
     """
+
+    years = [p.preferred_class_year for p in Person.geolocated.distinct('preferred_class_year')]
+    majors_list = [p.wesleyan_degree_1_major_1 for p in Person.geolocated.distinct('wesleyan_degree_1_major_1')]
+    majors = []
+    for major in majors_list:
+      if major != "":
+        majors.append(major)
+
+    industries = [p.industry for p in Person.geolocated.distinct('industry')]
+
+
+
     # grab get params
     year = request.GET.get('year')
     major = request.GET.get('major')
@@ -81,14 +103,6 @@ def search(request):
     # slice limit 80
     people = people[0:80]
 
-    years = [p.preferred_class_year for p in Person.geolocated.distinct('preferred_class_year')]
-    majors_list = [p.wesleyan_degree_1_major_1 for p in Person.geolocated.distinct('wesleyan_degree_1_major_1')]
-    majors = []
-    for major in majors_list:
-      if major != "":
-        majors.append(major)
-
-    industries = [p.industry for p in Person.geolocated.distinct('industry')]
 
     ids = [p.pk for p in people]
 
