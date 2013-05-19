@@ -25,6 +25,7 @@ function load_people(filters, url) {
         console.log(lat);
         name = val.name;
         var marker = new L.marker([lat, lng]);
+        // var marker = L.circleMarker([lat, lng], 200)
         marker.bindPopup(name);
         markers.addLayer(marker);
       });

@@ -44,8 +44,8 @@
         <div class="container">
           <!-- <h2>Search for Wesleyan people; -->
             <!-- There are 41,000 of us so far.</h2> -->
-          <form action="" method="post">
-            <input type="text" placeholder="Search for Wesleyan people by zipcode or city." name="" value="" />             
+          <form action="/filter" method="get">
+            <input type="text" placeholder="Search for Wesleyan people by zipcode or city." name="general" value="" />             
             <label>Class Year:</label>
               <select id="classyear">
                 <option value="2013">2013</option>
@@ -64,9 +64,11 @@
               <option value="American Studies">American Studies</option>
               <option value="Computer Science">Computer Science</option>
             </select>
-            <input type="checkbox" name="" value="" />Interested in Contact
+            <input type="checkbox" name="" value="">Interested in Contact</input>
+			<button type="submit" class="button">Find people!</button>
           </form>
-          <a href="#" class="button">Find people!</a>
+			{{ message }}
+          
         </div>
         </aside>
         
