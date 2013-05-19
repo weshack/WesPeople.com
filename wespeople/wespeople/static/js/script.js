@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
   } else if (from_year) {
     var url = "/api/geoperson?preferred_class_year=" + from_year;
   } else {
-    var url = "/api/geoperson?preferred_class_year__gte=2010"
+    var url = "/api/geoperson?preferred_class_year__gte=2000"
   }
   load_people(url, "");
   jQuery('#location-search').submit(function(e) {
@@ -57,6 +57,8 @@ function load_people(filters, url) {
         marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + degree2 + "<br /> " + degree3 + "<br />" + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
         markers.addLayer(marker);
         people.push(val)
+        jQuery("span#num_people").html(people.length);
+
       });
     map.addLayer(markers); 
   })
