@@ -67,6 +67,29 @@
       var mapId = 'ehc.map-shm0r7pp';
       var map = L.mapbox.map('map', mapId).setView([38.230062591265984, -98.50], 4);
       map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp'));
+
+      var from_year;
+      var to_year;
+      {% if from_year %}
+      from_year = {{ from_year }}
+      {% endif %}
+      {% if to_year %}
+      to_year = {{ to_year }}
+      {% endif %}
+
+
+      jQuery(document).ready(function($){
+        markers = new L.MarkerClusterGroup();
+        if (from_year && to_year) {
+          var url = "/api/geoperson?preferred_class_year__range=" + from_year + "," + to_year;
+        } else if (from_year) {
+          var url = "/api/geoperson?preferred_class_year=" + from_year;
+        } else {
+          var url = "/api/geoperson?preferred_class_year__gte=2000"
+        }
+        load_people(url, "");
+      });
+
 </script> 
     {% endblock %}
 </body>
