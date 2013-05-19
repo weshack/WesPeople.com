@@ -1,0 +1,12 @@
+/* line 1, ../sass/map.scss */
+.leaflet-left {
+  right: 0;
+}
+/* line 3, ../sass/map.scss */
+.leaflet-left .leaflet-control {
+  margin-right: 10px;
+}
+/* line 6, ../sass/map.scss */
+.leaflet-left .leaflet-control-scale {
+  margin-right: 10px;
+}
