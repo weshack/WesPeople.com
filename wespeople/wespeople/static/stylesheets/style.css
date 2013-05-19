@@ -469,12 +469,12 @@ aside#search-box select option {
   z-index: 1000000;
   position: absolute;
   color: white;
-  top: 210px;
+  top: 205px;
   left: 0;
 }
 /* line 247, ../sass/style.scss */
 #content-body aside#list-view .title {
-  margin-top: -20px;
+  margin-top: -18px;
   background: rgba(37, 67, 89, 0.8);
 }
 /* line 250, ../sass/style.scss */
@@ -515,7 +515,7 @@ aside#search-box select option {
 /* line 279, ../sass/style.scss */
 #map {
   position: absolute;
-  top: 210px;
+  top: 200px;
   bottom: 0;
   width: 100%;
 }
