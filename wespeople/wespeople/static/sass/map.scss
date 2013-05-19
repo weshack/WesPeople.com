@@ -1,3 +1,16 @@
-leaflet-left{
-  right: 0;
+$first: #bbb;
+$second: #ececec;
+$third: #efefef;
+$teal: #1DB89C;
+$charcoal: #444;
+
+.leaflet-left{
+  display:none;
+}
+
+.leaflet-control-container{
+  input{
+    border: 10px solid $teal;
+    padding: 10px 20px;
+  }
 }

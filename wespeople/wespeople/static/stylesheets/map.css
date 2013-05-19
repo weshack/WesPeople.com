@@ -1,4 +1,10 @@
-/* line 1, ../sass/map.scss */
-leaflet-left {
-  right: 0;
+/* line 7, ../sass/map.scss */
+.leaflet-left {
+  display: none;
+}
+
+/* line 12, ../sass/map.scss */
+.leaflet-control-container input {
+  border: 10px solid #1db89c;
+  padding: 10px 20px;
 }
