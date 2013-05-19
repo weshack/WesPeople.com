@@ -11,10 +11,19 @@ from maps.models import Person
 
 def index(request):
     """
-    Display the main index map page
+    Display the main index map page, with option to filter by year
     """
 
-    template_values = {'test': 'hello'}
+    template_values = {}
+
+    return render_to_response('maps/index.html', template_values)
+
+def filter_year(request, from_year, to_year=""):
+    """
+    Filter by graduation years
+    """
+
+    template_values = {'from_year': from_year, 'to_year' : to_year}
 
     return render_to_response('maps/index.html', template_values)
 

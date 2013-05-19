@@ -16,6 +16,17 @@
     <script type="text/javascript" src="//use.typekit.net/leb2ulb.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" src="/static/js/leaflet.markercluster.js"></script>
+    <script type="text/javascript">
+      var from_year;
+      var to_year;
+      {% if from_year %}
+      from_year = {{ from_year }}
+      {% endif %}
+      {% if to_year %}
+      to_year = {{ to_year }}
+      {% endif %}
+    </script>
+
   </head>
 <body>
   

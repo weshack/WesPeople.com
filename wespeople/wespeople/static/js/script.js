@@ -13,7 +13,14 @@ jQuery(document).ready(function($){
   });
 
   markers = new L.MarkerClusterGroup();
-  load_people("/api/geoperson?preferred_class_year__gte=2010", "");
+  if (from_year && to_year) {
+    var url = "/api/geoperson?preferred_class_year__range=" + from_year + "," + to_year;
+  } else if (from_year) {
+    var url = "/api/geoperson?preferred_class_year=" + from_year;
+  } else {
+    var url = "/api/geoperson?preferred_class_year__gte=2010"
+  }
+  load_people(url, "");
   jQuery('#location-search').submit(function(e) {
       var s = $('#myForm :input');
       console.log(s);

@@ -3,7 +3,7 @@ from django.contrib.gis import admin
 from django.conf.urls.defaults import *
 from tastypie.api import Api
 from maps.api import PersonResource
-from maps.views import register
+from maps.views import *
 from maps.models import Person
 from django.conf import settings
 from django.contrib.auth.views import login, logout
@@ -33,4 +33,6 @@ urlpatterns = patterns('',
             {'next_page': '/accounts/login'}),
     (r'^accounts/register/$', register),
     (r'^$', 'maps.views.index'),
+    (r'^(?P<from_year>\d{4})-(?P<to_year>\d{4})$', 'maps.views.filter_year'),
+    (r'^(?P<from_year>\d{4})', 'maps.views.filter_year'),
 )
