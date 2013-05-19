@@ -17,6 +17,8 @@ class PersonResource(ModelResource):
       'wesleyan_degree_1_major_1': ('exact', 'startswith'),
       'wesleyan_degree_1_major_2': ('exact', 'startswith'),
       'wesleyan_degree_1_major_3': ('exact', 'startswith'),
+      'location': ALL_WITH_RELATIONS,
+      'pk': ('exact', 'gte', "range"),
     }
 
     limit = 1000
