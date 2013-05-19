@@ -179,12 +179,17 @@ header#topBar{
     float:left;
   }
   form{
-    @include span-columns(8 of 12);
+    margin-bottom: 30px;
+    @include span-columns(6 of 12);
     @include shift(1);
+    @include row();
     input{
       padding: 4px 10px;
+      @include span-columns(5 of 7);
     }
     a.button{
+      float: right;
+      @include span-columns(1);
       padding: 4px 8px;
       font-weight: 200;
       background: $teal;
