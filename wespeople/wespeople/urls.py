@@ -30,5 +30,6 @@ urlpatterns = patterns('',
                 {'document_root': settings.MEDIA_ROOT}),
     (r'^accounts/login/$', login, 
             {'template_name':'login.html'}),
-    (r'^accounts/logout/$', logout),
+    (r'^accounts/logout/$', logout,
+            {'next_page': '/accounts/login'}),
 )
