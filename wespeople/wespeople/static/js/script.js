@@ -10,7 +10,6 @@ jQuery(document).ready(function($){
        $("#login-toggle").text('sign up now').stop();
     });
   });
-
 });
 
 function load_people(url, filters) {
@@ -39,7 +38,8 @@ function load_people(url, filters) {
         var country = val.country;
         var marker = new L.marker([lat, lng]);
         // var marker = L.circleMarker([lat, lng], 200)
-        marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
+        //marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
+        marker.bindPopup("<p><b>" + name + "</b><br />" + "<i class='icon-certificate'></i> Class of " + year + "<br /><i class='icon-book'></i> " + degree1 + "<br />" + degree2 + "<br /> " + degree3 + "<br />" + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
         markers.addLayer(marker);
         people.push(val)
         jQuery("span#num_people").html(people.length);
