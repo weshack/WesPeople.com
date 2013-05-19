@@ -17,30 +17,6 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" src="/static/js/leaflet.markercluster.js"></script>
     <script type="text/javascript" src="/static/js/script.js"></script>
-    <script type="text/javascript">
-      var ids = [];
-      {% for id in ids %}
-      ids.push({{ id }});
-      {% endfor %}
-      var from_year;
-      var to_year;
-      {% if from_year %}
-      from_year = {{ from_year }}
-      {% endif %}
-      {% if to_year %}
-      to_year = {{ to_year }}
-      {% endif %}
-
-      jQuery(document).ready(function($){
-        markers = new L.MarkerClusterGroup();
-
-
-      for (var i in ids){
-      load_people("/api/geoperson/" + ids[i], "");
-      }
-
-      });
-    </script>
 
   </head>
 <body id="{% block body_id %}{% endblock %}">

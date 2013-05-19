@@ -41,7 +41,7 @@
             <div id="map"></div>
         <aside id="list-view">
         <div class="title">
-          <h2><span id="num_people">0</span> people found.</h2>
+          <h2><span id="num_people">0</span> people found near {{ location }}.</h2>
         </div>
           <ul>
             <li class="user">
@@ -65,8 +65,51 @@
     </div>
     <script type='text/javascript'>
       var mapId = 'ehc.map-shm0r7pp';
-      var map = L.mapbox.map('map', mapId).setView([38.230062591265984, -98.50], 4);
+
+      var lat = {{ lat }};
+      var lng = {{ lng }};
+
+      var map = L.mapbox.map('map', mapId).setView([lat, lng], 8);
       map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp'));
+
+
+      var ids = [];
+      {% for id in ids %}
+      ids.push({{ id }});
+      {% endfor %}
+
+      function load_one_person(url, filters) {
+        jQuery.getJSON((url + filters), function(val) {
+              var lng = val.location.coordinates[0];
+              var lat = val.location.coordinates[1];
+              var name = val.first_name + " " + val.last_name;
+              var year = val.preferred_class_year;
+              var degree1 = val.wesleyan_degree_1_major_1;
+              var degree2 = val.wesleyan_degree_1_major_2;
+              var degree3 = val.wesleyan_degree_1_major_3;
+              var industry = val.industry;
+              var city = val.city;
+              var state = val.state;
+              var country = val.country;
+              var marker = new L.marker([lat, lng]);
+              // var marker = L.circleMarker([lat, lng], 200)
+              marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + degree2 + "<br /> " + degree3 + "<br />" + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
+              markers.addLayer(marker);
+              people.push(val)
+              jQuery("span#num_people").html(people.length);
+              map.addLayer(markers); 
+        })
+        .fail(function() { console.log( "error" ); })
+        .always(function() { console.log( "complete" ); });
+      };
+
+      jQuery(document).ready(function($){
+        markers = new L.MarkerClusterGroup();
+        for (var i in ids){
+          load_one_person("/api/geoperson/", ids[i]);
+        }
+      });
+
 </script> 
     {% endblock %}
 </body>
