@@ -1,3 +1,191 @@
-leaflet-left{
-  right: 0;
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+
+$first: #bbb;
+$second: #ececec;
+$third: #efefef;
+$teal: #1DB89C;
+$charcoal: #444;
+$darkblue: rgba(37,67,89,0.8);
+
+.leaflet-left{
+  display:none;
 }
+
+.leaflet-container{
+  font-family: "futura-pt", $helvetica;
+}
+
+.leaflet-control-container{
+  input{
+    font-family: "futura-pt", $helvetica;
+    -webkit-font-smoothing: antialiased !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    font-size: golden-ratio(12px,1);
+    border: 10px solid $teal;
+    padding: 10px 20px;
+    background: $darkblue;
+    color: white;
+  }
+  input[type="submit"]{
+    color: $darkblue;
+    -webkit-font-smoothing: antialiased !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    padding: 10px 20px;
+    float: right;
+  }
+}
+
+/* popup */
+.leaflet-popup {
+	position: absolute;
+	text-align: center;
+	}
+.leaflet-popup-content-wrapper {
+	padding: 1px;
+	text-align: left;
+	-webkit-border-radius: 4px;
+	        border-radius: 4px;
+	}
+.leaflet-popup-content {
+	margin: 14px 20px;
+	line-height: 1.4;
+	}
+.leaflet-popup-content p {
+	margin: 18px 0;
+  font-family: "futura-pt", $helvetica;
+	}
+.leaflet-popup-tip-container {
+	margin: 0 auto;
+	width: 40px;
+	height: 20px;
+	position: relative;
+	overflow: hidden;
+	}
+.leaflet-popup-tip {
+	width: 15px;
+	height: 15px;
+	padding: 1px;
+
+	margin: -8px auto 0;
+
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	     -o-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	background: white;
+
+	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	}
+.leaflet-container a.leaflet-popup-close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 4px 5px 0 0;
+	text-align: center;
+	width: 18px;
+	height: 14px;
+	color: #c3c3c3;
+	text-decoration: none;
+	font-weight: bold;
+	background: transparent;
+	}
+.leaflet-container a.leaflet-popup-close-button:hover {
+	color: #999;
+	}
+.leaflet-popup-scrolled {
+	overflow: auto;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	}
+
+/* div icon */
+
+.leaflet-div-icon {
+	background: #fff;
+	border: 1px solid #666;
+	}
+.leaflet-editing-icon {
+	-webkit-border-radius: 2px;
+	        border-radius: 2px;
+	}
+.map-legends {
+    border:1px solid #bbb;
+    box-sizing:border-box;
+    background:#fff;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+
+.map-legends {
+    -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+    box-shadow:0 1px 2px rgba(0,0,0,0.15);
+}
+
+.map-legends .map-legend {
+    padding:10px;
+}
+
+.map-tooltip {
+    z-index:999999;
+    padding:10px;
+    max-width:300px;
+    opacity:1;
+
+    -webkit-transition:opacity 150ms;
+    -moz-transition:opacity 150ms;
+    -ms-transition:opacity 150ms;
+    -o-transition:opacity 150ms;
+    transition:opacity 150ms;
+
+    -webkit-user-select:auto;
+    -moz-user-select:auto;
+    user-select:auto;
+
+    border:1px solid #bbb;
+    box-sizing:border-box;
+    background:#fff;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    min-width:180px;
+    max-width:280px;
+    max-height:400px;
+
+    overflow:auto;
+    width:220px\8; /*< IE 9*/
+
+    -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+    box-shadow:0 1px 2px rgba(0,0,0,0.15);
+}
+
+.map-tooltip .close {
+    text-indent:-999em;
+    background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAAeCAYAAADO4udXAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHFSURBVHic7dpBbsIwEAXQoZpbwKKz8Bm66EFyjUicI1KuwUF6Ci/cBbmFJbqoLbluJezgMSn8JyGhJMRAvmZiw+5yuRBAay/3fgPwmBAsUIFggQoEC1QgWKACwQIVCBaoQLCgiIiMIjKWHo9gbVy4oJ/po9e42fPiUBERcemBxpiD935i5qO19ly6rzUR+SAics69a46zFc65WUSIKi9sA2MYN449O+fm0hcXVyzv/UREb977kzHmELeHUJ3Cvqn0fDfYhwfoi5WqKlREFRWLmY8hQPsQroGIKG4jooWZjzWDw3VJG4oXtnflWqU4WNbaszFmSMMVdsVQDdpt8NmkoYoVI2lPPY0iQjVVa1f774ak9cV2pBqqcE91rfUtre+57jGuiIxJgFa3oS0orljQxU03zGv8NeNzzr3eet6qipVVqyVs7toK43S7xYffmmwpoVulysPV4rstnhXmoWLmgZkH+g7YPp8twnOrXW74UZ2stecsXD2WG55F1Ur3Wtmss1mFrF1u+LUImswWp07LDcv1Q/6n3u1dc9ZZPSuExxErosa9HIIFKvAjNKhAsEAFggUqECxQgWCBCgQLVCBYoALBAhVfpi7sxwlEhWYAAAAASUVORK5CYII=) no-repeat 0 0;
+    overflow:hidden;
+    display:none;
+}
+
+.map-tooltip.closable .close:active  {
+    border-color:#b0b0b0;
+    background-color:#f0f0f0;
+}
+
+.map-tooltip.closable .close {
+    position:absolute;
+    top:4px;
+    right:4px;
+    width:20px;
+    height:20px;
+    background-position:-5px -5px;
+    border-radius: 10px;
+}
+
+.map-tooltip.closable .close {
+    display:block;
+}
+  
