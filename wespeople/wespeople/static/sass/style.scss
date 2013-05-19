@@ -252,21 +252,21 @@ aside#search-box{
       }
     }
     ul{
-      margin-top: -20px;
-      li.user{
+      width: 100%;
+      margin-top: -18px;
+      @include omega();
+      li{list-style-type:none;}
+      li.user a{
+        color: white;
         @include row();
-        // border-top: 1px solid $first;
-        // padding: 10px;
         border-bottom: 1px solid $first;
-        padding: 20px 0;
-        a{
-          color: white;
-          // color: lighten($teal, 30%);        
-        }
         p{
           margin: 0 auto;
           font-size: golden-ratio(10px,1);
           font-weight: 200;
+        }
+        &:hover{
+          background: $teal;
         }
       }
     }
