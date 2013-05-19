@@ -90,10 +90,12 @@ def register(request):
         if form.is_valid():
             new_user = form.save()
             match = Person.objects.filter(preferred_email=form['email'].value())
+            msg = "You have created a new account at wespeople.com."
             if match:
                 new_user.person = match[0]
-            send_mail("New account created", "This will get sent through mandrill",
-              "Djrill Sender <support@wespeople.com>", [form['email'].value()])
+                msg += "\n\nWe have found an existing profile for you based on your email address."
+            send_mail("New account created", msg,
+              "<support@wespeople.com>", [form['email'].value()])
             return HttpResponseRedirect("/")
     else:
         form = UserCreateForm()
