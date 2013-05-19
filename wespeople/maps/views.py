@@ -34,18 +34,18 @@ def search(request):
     return render_to_response('map.html', template_values)
 
 class UserCreateForm(UserCreationForm):
-  email  = forms.EmailField(required=True)
+    email = forms.EmailField(required=True)
 
-  class Meta:
-    model = User
-    fileds = ("username", "email", "password1", "password2")
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")
 
-  def save(self, commit=True):
-    user = super(UserCreateForm, self).save(commit=False)
-    user.email = self.cleaned_data["email"]
-    if commit:
-      user.save()
-    return user
+    def save(self, commit=True):
+        user = super(UserCreateForm, self).save(commit=False)
+        user.email = self.cleaned_data["email"]
+        if commit:
+            user.save()
+        return user
 
 def register(request):
     if request.method == 'POST':
