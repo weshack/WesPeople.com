@@ -2,7 +2,8 @@ from django.contrib.gis.db import models
 
 class PersonLocationManager(models.GeoManager):
   def get_query_set(self):
-    return super(PersonLocationManager, self).get_query_set().filter(location__isnull=False)
+    return super(PersonLocationManager,
+        self).get_query_set().filter(location__isnull=False).exclude(first_name='').exclude(last_name='')
 
 class PersonNameManager(models.GeoManager):
   def get_query_set(self):
@@ -62,7 +63,7 @@ class Person(models.Model):
   people = models.Manager()
   geolocated = PersonLocationManager()
   names = PersonNameManager()
-  
+
   def makeName(self):
     n = self.name.split(',')
     self.first_name = n[1]
