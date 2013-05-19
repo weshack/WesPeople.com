@@ -54,10 +54,13 @@ def filter_near(request, location, year=None, distance=50):
 
     people = people[0:80]
 
+    years = [p.preferred_class_year for p in Person.geolocated.distinct('preferred_class_year')]
+
+
     ids = [p.pk for p in people]
 
     template_values = {'people': people, 'distance' : distance, 'location' :
-        location, 'ids' : ids, 'lat': lat, "lng" : lng}
+        location, 'ids' : ids, 'lat': lat, "lng" : lng, 'years' : years}
 
     return render_to_response('maps/near_results.html', template_values)
 
