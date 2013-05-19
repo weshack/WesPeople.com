@@ -34,7 +34,7 @@ def filter_year(request, from_year, to_year=""):
 
     return render_to_response('maps/index.html', template_values)
 
-def filter_near(request, location, distance=100):
+def filter_near(request, location, year=None, distance=50):
     """
     Location string to geocode from mapquest. Distance in miles
     """
@@ -47,7 +47,13 @@ def filter_near(request, location, distance=100):
 
     pnt = fromstr("POINT(%s %s)" % (lng, lat))
 
-    people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))[0:50]
+    people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))
+
+    if year:
+      people = people.filter(preferred_class_year=year)
+
+    people = people[0:80]
+
     ids = [p.pk for p in people]
 
     template_values = {'people': people, 'distance' : distance, 'location' :
