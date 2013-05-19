@@ -4,6 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
+    ('Evan Carmi', 'ecarmi@wesleyan.edu'),
     ('Diego', 'dcalderon@wesleyan.edu'),
 )
 
@@ -188,5 +189,13 @@ AUTH_PROFILE_MODULE = 'maps.Person'
 LOGIN_REDIRECT_URL = '/accounts/%(username)s/'
 LOGIN_URL = '/accounts/signin/'
 LOGOUT_URL = '/accounts/signout/'
+
+CACHES = {
+    'default': {
+      'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+      }
+    }
+
+
 
 from prod_settings import *
