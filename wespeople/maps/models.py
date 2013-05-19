@@ -4,6 +4,10 @@ class PersonLocationManager(models.GeoManager):
   def get_query_set(self):
     return super(PersonLocationManager, self).get_query_set().filter(location__isnull=False)
 
+class PersonNameManager(models.GeoManager):
+  def get_query_set(self):
+    return super(PersonNameManager, self).get_query_set().filter(name='')
+
 # Create your models here.
 class Person(models.Model):
   # define the fields for your item here like:
@@ -57,10 +61,18 @@ class Person(models.Model):
 
   people = models.Manager()
   geolocated = PersonLocationManager()
+  names = PersonNameManager()
   
+  def makeName(self):
+    n = self.name.split(',')
+    self.first_name = n[1]
+    self.last_name = n[0]
 
   def __unicode__(self):
     if self.first_name and self.last_name:
       return self.last_name + ", " + self.first_name
+    elif self.name:
+      self.makeName()
+      return self.last_name + ', ' + self.first_name
     else:
       return u"Person object pk=%s" % self.pk

@@ -20,6 +20,6 @@ class PersonAdmin(admin.GeoModelAdmin):
   #    )
   #  }),
   #)
-  list_display = ('last_name', 'first_name', 'preferred_class_year')
+  list_display = ('last_name', 'first_name', 'name', 'preferred_class_year')
 
 admin.site.register(Person, PersonAdmin)
