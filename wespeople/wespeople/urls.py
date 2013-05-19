@@ -4,6 +4,7 @@ from django.conf.urls.defaults import *
 from django.conf.urls.static import static
 from tastypie.api import Api
 from maps.api import PersonResource
+from maps.views import register
 from maps.models import Person
 from django.conf import settings
 from django.contrib.auth.views import login, logout
@@ -28,8 +29,10 @@ urlpatterns = patterns('',
     url(r'^api/', include(people.urls)),
     (r'^accounts/login/$', login,
             {'template_name':'login.html'}),
+    (r'^accounts/login/$', login),
     (r'^accounts/logout/$', logout,
-            {'next_page': '/accounts/login'}),
+          {'next_page': '/'}),
+    (r'^accounts/register/$', register),
     (r'^$', 'maps.views.index'),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
