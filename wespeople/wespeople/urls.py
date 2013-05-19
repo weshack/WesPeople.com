@@ -35,4 +35,5 @@ urlpatterns = patterns('',
     (r'^$', 'maps.views.index'),
     (r'^(?P<from_year>\d{4})-(?P<to_year>\d{4})$', 'maps.views.filter_year'),
     (r'^(?P<from_year>\d{4})', 'maps.views.filter_year'),
+    (r'^near/(?P<location>.*)$', 'maps.views.filter_near'),
 )

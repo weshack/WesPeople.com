@@ -7,6 +7,12 @@ from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import send_mail
+from django.contrib.gis.geos import *
+from django.contrib.gis.measure import D
+import urllib
+import requests
+import simplejson
+
 
 from maps.models import Person
 
@@ -27,6 +33,27 @@ def filter_year(request, from_year, to_year=""):
     template_values = {'from_year': from_year, 'to_year' : to_year}
 
     return render_to_response('maps/index.html', template_values)
+
+def filter_near(request, location, distance=100):
+    """
+    Location string to geocode from mapquest. Distance in miles
+    """
+    url = "http://open.mapquestapi.com/geocoding/v1/address?key=Fmjtd%7Cluub2dutn9%2Cbn%3Do5-9u25gr&location=" + location
+    r = requests.get(url)
+
+    latlng = r.json()['results'][0]['locations'][0]['latLng']
+    lat = latlng['lat']
+    lng = latlng['lng']
+
+    pnt = fromstr("POINT(%s %s)" % (lng, lat))
+
+    people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))
+    ids = [p.pk for p in people]
+
+    template_values = {'people': people, 'distance' : distance, 'location' :
+        location, 'ids' : ids}
+
+    return render_to_response('maps/near_results.html', template_values)
 
 def search(request):
     """
