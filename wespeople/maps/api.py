@@ -8,9 +8,15 @@ class PersonResource(ModelResource):
     queryset = Person.geolocated.all()
     resource_name = 'geoperson'
 
+    exclude = ['preferred_email']
     #fields = ['name', 'location', 'preferred_class_year']
     filtering = {
       'preferred_class_year': 'exact',
+      'state': ('exact', 'startswith'),
+      'city': ('exact', 'startswith'),
+      'wesleyan_degree_1_major_1': ('exact', 'startswith'),
+      'wesleyan_degree_1_major_2': ('exact', 'startswith'),
+      'wesleyan_degree_1_major_3': ('exact', 'startswith'),
     }
 
     limit = 0
