@@ -179,10 +179,20 @@ header#topBar{
     float:left;
   }
   form{
-    @include span-columns(2 of 12);
-    @include shift(3);
+    @include span-columns(8 of 12);
+    @include shift(1);
     input{
       padding: 4px 10px;
+    }
+    a.button{
+      padding: 4px 8px;
+      font-weight: 200;
+      background: $teal;
+      border:none;
+      text-shadow: none;
+      &:hover{
+        background: darken($teal, 5%);
+      }
     }
   }
   nav{
@@ -242,7 +252,7 @@ aside#search-box{
     z-index: 1000000;
     position: absolute;
     color: white;
-    top: 205px;
+    top: 80px;
     left:0;
     .title{
       margin-top: -18px;
@@ -283,7 +293,7 @@ aside#search-box{
 
 #map{
    position:absolute; 
-   top: 200px; 
+   top: 80px; 
    bottom:0; 
    width:100%;
 }
