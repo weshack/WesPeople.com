@@ -14,4 +14,4 @@ def map_test(request):
 
     template_values = {'test': 'test',}
 
-    return render_to_response('maps-test.html', template_values)
+    return render_to_response('map.html', template_values)

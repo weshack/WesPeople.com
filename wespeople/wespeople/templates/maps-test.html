@@ -1,19 +1,16 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
-  <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
-  <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-  </style>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.css' rel='stylesheet' />
+  <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.ie.css' rel='stylesheet' />
+  <![endif]-->
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
 </head>
 <body>
-
-<div id='map'></div>
-<script>
-  mapbox.auto('map', 'ehc.map-shm0r7pp');
-</script>
-
+  <div id='map' class='dark'></div>
+  <script type='text/javascript'>
+  var map = L.mapbox.map('map', 'ehc.map-shm0r7pps')
+      .setView([37.9, -77], 5);
+  </script>
 </body>
 </html>
