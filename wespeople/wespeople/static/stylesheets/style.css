@@ -435,15 +435,16 @@ header#topBar form ul li {
 }
 /* line 220, ../sass/style.scss */
 header#topBar form ul li label {
+  color: #bbbbbb;
   display: block;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 227, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 header#topBar form ul li select {
   width: 100px;
 }
-/* line 233, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 header#topBar input.button {
   float: right;
   margin-top: 10px;
@@ -456,26 +457,12 @@ header#topBar input.button {
   text-transform: uppercase;
   text-shadow: none;
 }
-/* line 244, ../sass/style.scss */
+/* line 245, ../sass/style.scss */
 header#topBar input.button:hover {
   background: #1aa289;
 }
-/* line 190, ../sass/style.scss */
-header#topBar nav ul {
-  float: right;
-}
-/* line 192, ../sass/style.scss */
-header#topBar nav ul li {
-  margin-left: 10px;
-  display: inline;
-  list-style-type: none;
-}
-/* line 252, ../sass/style.scss */
-header#topBar nav ul li:last-child {
-  margin-right: 0;
-}
 
-/* line 260, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 #content-body aside#list-view {
   z-index: 1000000;
   background: #254359;
@@ -483,39 +470,54 @@ header#topBar nav ul li:last-child {
   color: white;
   left: 0;
 }
-/* line 266, ../sass/style.scss */
+/* line 259, ../sass/style.scss */
 #content-body aside#list-view .title {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0;
 }
-/* line 271, ../sass/style.scss */
+/* line 264, ../sass/style.scss */
 #content-body aside#list-view .title h2 {
   padding: 10px 20px;
 }
 
-/* line 277, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
+footer nav ul {
+  float: right;
+}
+/* line 192, ../sass/style.scss */
+footer nav ul li {
+  margin-left: 10px;
+  display: inline;
+  list-style-type: none;
+}
+/* line 275, ../sass/style.scss */
+footer nav ul li:last-child {
+  margin-right: 0;
+}
+
+/* line 281, ../sass/style.scss */
 #map {
-  bottom: 0;
+  bottom: 40px;
   width: 100%;
   border-top: 8px solid rgba(37, 67, 89, 0.8);
   position: absolute;
 }
 
-/* line 284, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 #map, #list-view {
   top: 130px;
 }
 
 /*------ User Profile ------ */
-/* line 292, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 .map-holder {
   background-color: rgba(0, 0, 0, 0.4);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(26, 26, 26, 0.4)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
 }
-/* line 294, ../sass/style.scss */
+/* line 298, ../sass/style.scss */
 .map-holder .text-holder {
   *zoom: 1;
   display: block;
@@ -529,31 +531,34 @@ header#topBar nav ul li:last-child {
 .map-holder .text-holder:after {
   clear: both;
 }
-/* line 296, ../sass/style.scss */
+/* line 300, ../sass/style.scss */
 .map-holder .text-holder h1, .map-holder .text-holder h2, .map-holder .text-holder h3, .map-holder .text-holder h4, .map-holder .text-holder p, .map-holder .text-holder a, .map-holder .text-holder small {
   color: white;
 }
-/* line 299, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 .map-holder .text-holder h1 {
   float: left;
 }
-/* line 300, ../sass/style.scss */
+/* line 304, ../sass/style.scss */
 .map-holder .text-holder h3 {
   float: right;
 }
 
-/* line 306, ../sass/style.scss */
+/* line 310, ../sass/style.scss */
 .profile-content ul li {
   list-style-type: none;
 }
-/* line 308, ../sass/style.scss */
+/* line 312, ../sass/style.scss */
 .profile-content ul li span.title-label {
   font-weight: bold;
 }
 
 /*------- Footer ---------*/
-/* line 316, ../sass/style.scss */
+/* line 320, ../sass/style.scss */
 footer .container {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
   margin-top: 40px;
   border-top: 1px solid #bbbbbb;
   text-align: center;
@@ -561,13 +566,13 @@ footer .container {
 
 /* ------- RESPONSIVE -----------*/
 @media screen and (max-width: 1170px) {
-  /* line 324, ../sass/style.scss */
+  /* line 331, ../sass/style.scss */
   #map, #list-view {
     top: 160px;
   }
 }
 @media screen and (max-width: 769px) {
-  /* line 324, ../sass/style.scss */
+  /* line 331, ../sass/style.scss */
   #map, #list-view {
     top: 200px;
   }

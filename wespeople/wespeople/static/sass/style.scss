@@ -218,6 +218,7 @@ header#topBar{
       li{
         list-style-type: none;
         label{
+          color: $first;
           display: block;
           font-weight: bold;
           text-transform: uppercase;
@@ -246,14 +247,6 @@ header#topBar{
       }
   }
 
-  nav{
-    @include inlineBar(right, 10px);
-    ul{
-      li:last-child{
-        margin-right: 0;
-      }
-    }
-  }
 }
 
 #content-body{
@@ -274,8 +267,19 @@ header#topBar{
     }
   }
 }
+
+footer{
+  nav{
+    @include inlineBar(right, 10px);
+    ul{
+      li:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
 #map{
-   bottom:0; 
+   bottom:40px; 
    width:100%;
   border-top: 8px solid $darkblue;
   position:absolute; 
@@ -314,6 +318,9 @@ $lightgradient: lighten($darkgradient, 10%);
 
 /*------- Footer ---------*/
 footer .container{
+  position: absolute;
+  bottom:0;
+  z-index: 1000;
   margin-top: 40px;
   border-top: 1px solid $first;
   text-align: center;
