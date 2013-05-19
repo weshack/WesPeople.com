@@ -1,3 +1,4 @@
+var markers;
 jQuery.noConflict();
 jQuery(document).ready(function($){
   $("#login-toggle").click(function() {
@@ -9,10 +10,15 @@ jQuery(document).ready(function($){
     });
   });
 
-  var markers = new L.MarkerClusterGroup();
-  var people = $.getJSON("/api/geoperson", function(data) {
+  markers = new L.MarkerClusterGroup();
+  load_people("/api/geoperson", "");
+
+});
+
+function load_people(filters, url) {
+  var people = jQuery.getJSON((url + filters), function(data) {
     console.log( "success" );
-      $.each(data.objects, function (key, val) {
+      jQuery.each(data.objects, function (key, val) {
         lng = val.location.coordinates[0];
         console.log(lng);
         lat = val.location.coordinates[1];
@@ -24,9 +30,14 @@ jQuery(document).ready(function($){
       });
     map.addLayer(markers); 
   })
-  .done(function() {
+  .done(function(data) {
     console.log( "second success" ); 
+    var next = data.meta.next;
+    console.log(next);
+    if (next !== null) {
+      load_people(next, "");
+    }
   })
   .fail(function() { console.log( "error" ); })
   .always(function() { console.log( "complete" ); });
-});
+};
