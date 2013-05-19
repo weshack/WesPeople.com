@@ -27,7 +27,7 @@ DATABASES = {
 
 EMAIL_HOST = 'smtp.mandrillapp.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "support@wespeople.com"
+DEFAULT_FROM_USER = "support@wespeople.com"
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
 MANDRILL_API_KEY = "a4PjhDU7xBzLK_KM_MOnPg"
 
