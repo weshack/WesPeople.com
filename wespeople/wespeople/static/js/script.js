@@ -23,13 +23,23 @@ function load_people(url, filters) {
         var degree1 = val.wesleyan_degree_1_major_1;
         var degree2 = val.wesleyan_degree_1_major_2;
         var degree3 = val.wesleyan_degree_1_major_3;
+        if (degree2 != "") {
+          degree1 = degree1 + "<br />" + degree2;
+        } 
+        if (degree3 !=  "") {
+          degree1 = degree1 + "<br />" + degree3;
+        }
+
         var industry = val.industry;
+        if (industry != "") {
+          industry = industry + "<br />";
+        }
         var city = val.city;
         var state = val.state;
         var country = val.country;
         var marker = new L.marker([lat, lng]);
         // var marker = L.circleMarker([lat, lng], 200)
-        marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + degree2 + "<br /> " + degree3 + "<br />" + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
+        marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
         markers.addLayer(marker);
         people.push(val)
         jQuery("span#num_people").html(people.length);
