@@ -18,18 +18,20 @@
 
               <li>
             <label>Major:</label>
-            <select id="major">
+            <select id="major-select">
               <option value="all">All Majors</option>
-              <option value="American Studies">American Studies</option>
-              <option value="Computer Science">Computer Science</option>
+              {% for major in majors %}
+              <option value="{{major }}">{{ major }}</option>
+              {% endfor %}
             </select>
             </li>
             <li>
             <label>Industry/Career:</label>
             <select id="industry">
               <option value="all">All Careers</option>
-              <option value="American Studies">American Studies</option>
-              <option value="Computer Science">Computer Science</option>
+              {% for i in industries %}
+              <option value="{{ i }}">{{ i }}</option>
+              {% endfor %}
             </select>
             </li>
           </ul>

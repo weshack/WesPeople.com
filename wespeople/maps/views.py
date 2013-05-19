@@ -49,18 +49,26 @@ def filter_near(request, location, year=None, distance=50):
 
     people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))
 
+
     if year:
       people = people.filter(preferred_class_year=year)
 
     people = people[0:80]
 
     years = [p.preferred_class_year for p in Person.geolocated.distinct('preferred_class_year')]
+    majors_list = [p.wesleyan_degree_1_major_1 for p in Person.geolocated.distinct('wesleyan_degree_1_major_1')]
+    majors = []
+    for major in majors_list:
+      if major != "":
+        majors.append(major)
 
+    industries = [p.industry for p in Person.geolocated.distinct('industry')]
 
     ids = [p.pk for p in people]
 
     template_values = {'people': people, 'distance' : distance, 'location' :
-        location, 'ids' : ids, 'lat': lat, "lng" : lng, 'years' : years}
+        location, 'ids' : ids, 'lat': lat, "lng" : lng, 'years' : years,
+        'majors': majors, 'industries' : industries}
 
     return render_to_response('maps/near_results.html', template_values)
 
