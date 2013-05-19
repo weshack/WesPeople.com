@@ -23,8 +23,22 @@ $darkblue: rgba(37,67,89,0.8);
       }
     }
   }
-  // header#topBar{}
 }
+
+
+/*------- Mixins ----------*/
+@mixin inlineBar($direction, $sidemargin){
+  ul{
+    float: $direction;
+    li{
+      margin-left: $sidemargin;
+      display: inline;
+      list-style-type:none;
+    }
+  }
+}
+
+
 header#topBar{
   @include outer-container();
   a#logo{
@@ -32,6 +46,10 @@ header#topBar{
     // @include media($tablet){
     //   @include span-columns(12);
     // }
+  }
+  nav{
+    @include span-columns(7);
+    @include shift(2);
   }
   form{
     @include span-columns(8);
@@ -59,6 +77,9 @@ header#topBar{
       @include span-columns(2 of 8);
       @include omega();
     }
+    nav{
+      @include inlineBar(right, 20px);
+    }
   }
 }
 footer{
@@ -84,17 +105,17 @@ html, html a, input{
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
-h1{font-size: golden-ratio(8px, 3);}
-h2{font-size: golden-ratio(8px, 2);}
+h1{font-size: golden-ratio(12px, 3);}
+h2{font-size: golden-ratio(12px, 2);}
 h3{font-size: golden-ratio(12px, 1);}
-p{font-size: golden-ratio(9px, 1);}
+p, a{font-size: golden-ratio(12px, 1);}
 
 
 
 a{
   color: $teal;
   text-decoration: none;
-  @include transition(all, 0.25s, ease-in-out);
+  @include transition(color, 0.5s, ease-in-out);
   &:hover{
     color: darken($teal, 15%);
   }
@@ -104,6 +125,9 @@ a{
 a.button{
   @include button($teal);
   text-align: center;
+  background: $teal;
+  border:none;
+  box-shadow:none;
 }
 input.button{
   @include button($teal);
@@ -185,27 +209,34 @@ a.button{
   display: none;
 }
 
-/*------- Mixins ----------*/
-@mixin inlineBar($direction, $sidemargin){
-  ul{
-    float: $direction;
-    li{
-      margin-left: $sidemargin;
-      display: inline;
-      list-style-type:none;
-    }
-  }
-}
 /*------ Top Navigation Bar ------*/
 header#topBar{
   @include pad(16px default);
   a#logo img{
-    margin-top: 10px;
     float:left;
-    // margin-left: -30px;
-    width: 100%;
-    // display: block;
     height: auto;
+    margin-top: 10px;
+    width: 100%;
+  }
+  nav{
+    @include inlineBar(right, 40px);
+    ul{
+      li{
+        a.search-link{
+          text-transform: uppercase;
+          box-shadow: none;
+          background: white;
+          border: 4px solid $teal;
+          text-shadow: none;
+          color: $teal; 
+          padding: 12px 18px;
+          &:hover{
+            background: $teal;
+            color: white;
+          }
+        }
+      }
+    }
   }
   form{
     
@@ -232,16 +263,16 @@ header#topBar{
     }
 }
     input.button{
-      float: right;
-      margin-top: 10px;
-      padding: 10px 8px;
-      font-weight: 200;
       background: $teal;
       border:none;
+      float: right;
       font-size: golden-ratio(10px, 1);
+      font-weight: 200;
       font-weight: bold;
-      text-transform: uppercase;
+      margin-top: 10px;
+      padding: 10px 8px;
       text-shadow: none;
+      text-transform: uppercase;
       &:hover{
         background: darken($teal, 5%);
       }
@@ -269,6 +300,8 @@ header#topBar{
 }
 
 footer{
+  background: $darkblue;
+  color: white;
   nav{
     @include inlineBar(right, 10px);
     ul{
