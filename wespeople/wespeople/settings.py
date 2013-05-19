@@ -27,7 +27,7 @@ DATABASES = {
 
 EMAIL_HOST = 'smtp.mandrillapp.com'
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = "support@wespeople.com"
+EMAIL_HOST_USER = "support@wespeople.com"
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
 MANDRILL_API_KEY = "a4PjhDU7xBzLK_KM_MOnPg"
 
@@ -141,6 +141,9 @@ INSTALLED_APPS = (
     'south',
     'tastypie',
     'djrill',
+    'userena',
+    'guardian',
+    'easy_thumbnails',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -171,5 +174,19 @@ LOGGING = {
         },
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    )
+
+ANONYMOUS_USER_ID = -1
+
+AUTH_PROFILE_MODULE = 'maps.Person'
+
+LOGIN_REDIRECT_URL = '/accounts/%(username)s/'
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/signout/'
 
 from prod_settings import *

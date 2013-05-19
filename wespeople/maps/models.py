@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.gis.db import models
+from django.utils.translation import ugettext as _
+from userena.models import UserenaBaseProfile
 
 class PersonLocationManager(models.GeoManager):
   def get_query_set(self):
@@ -11,7 +13,7 @@ class PersonNameManager(models.GeoManager):
     return super(PersonNameManager, self).get_query_set().filter(name='')
 
 # Create your models here.
-class Person(models.Model):
+class Person(UserenaBaseProfile):
   # define the fields for your item here like:
   name = models.CharField(max_length=100, null=True, blank=True)
   mid = models.CharField(max_length=100, null=True, blank=True)
@@ -65,7 +67,7 @@ class Person(models.Model):
   geolocated = PersonLocationManager()
   names = PersonNameManager()
 
-  user = models.OneToOneField(User, null=True, blank=True)
+  user = models.OneToOneField(User, null=True, blank=True, unique=True, verbose_name=_('user'))
 
   def makeName(self):
     n = self.name.split(',')
