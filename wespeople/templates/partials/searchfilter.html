@@ -1,46 +1,53 @@
 {% block searchfilter %}
 
-<form method="get" id="location-search">
+<form method="get" action="/search/" id="location-search">
   <input type="text" id="location-search-input" placeholder="Search by city or zipcode.">
-   <ul>
-  <li>
-      <label>Class Year:</label>
-        <select id="classyear">
-          <option value="all">All Grad Year</option>
-          <option value="2013">2013</option>
-          <option value="2012">2012</option>
-          <option value="2011">2011</option>
-          <option value="2010">2010</option>
-        </select>
-        </li>
+  <ul>
+    <li>
+    <label>Class Year:</label>
+    <select id="year-select" name="year">
+      <option value="all">All Grad Year</option>
+      {% for year in years %}
+      <option value="{{ year }}">{{ year }}</option>
+      {% endfor %}
+    </select>
 
-        <li>
-      <label>Major:</label>
-      <select id="major">
-        <option value="all">All Majors</option>
-        <option value="American Studies">American Studies</option>
-        <option value="Computer Science">Computer Science</option>
-      </select>
-      </li>
-      <li>
-      <label>Industry/Career:</label>
-      <select id="industry">
-        <option value="all">All Careers</option>
-        <option value="American Studies">American Studies</option>
-        <option value="Computer Science">Computer Science</option>
-      </select>
-      </li>
-    </ul>
+    </li>
+
+    <li>
+    <label>Major:</label>
+    <select id="major-select" name="major">
+      <option value="all">All Majors</option>
+      {% for major in majors %}
+      <option value="{{major }}">{{ major }}</option>
+      {% endfor %}
+    </select>
+    </li>
+    <li>
+    <label>Industry/Career:</label>
+    <select id="industry-select" name="industry">
+      <option value="all">All Careers</option>
+      {% for i in industries %}
+      <option value="{{ i }}">{{ i }}</option>
+      {% endfor %}
+    </select>
+    </li>
+  </ul>
+  <input class="button" type="submit" value="Find people" />
 </form>
-  <a href="#" class="button" type="submit">Find people!</a>
+
 
   <script>
 jQuery(document).ready(function($){
   console.log("Got this");
   $("#location-search").submit(function(e) {
     console.log(e);
-    var search = $("#location-search-input").val()
-    window.location = "/near/" + search;
+    var location = $("#location-search-input").val()
+    var year = $("#year-select").val()
+    var major = $("#major-select").val()
+    var industry = $("#industry-select").val()
+    window.location = "/search?location=" + location + "?year=" + year + "?major="
+    + major + "?industry=" + industry;
     e.preventDefault();
     });
 });

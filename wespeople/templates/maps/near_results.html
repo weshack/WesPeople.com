@@ -3,75 +3,35 @@
     <div id="main-maps">
       <header id="topBar" class="container">
       <a href="#" id="logo"><img src="/static/img/wespeople-logo.png"></a>
-      <form action="/filter" method="get">
-        <ul>
-        <li>
-            <label>Class Year:</label>
-              <select class="year-select">
-                <option value="all">All Grad Year</option>
-                {% for year in years %}
-                <option value="{{ year }}">{{ year }}</option>
-                {% endfor %}
-              </select>
 
-              </li>
+      {% include "partials/searchfilter.html" %}
+      </header>
+        <div id="map"></div>
 
-              <li>
-            <label>Major:</label>
-            <select id="major-select">
-              <option value="all">All Majors</option>
-              {% for major in majors %}
-              <option value="{{major }}">{{ major }}</option>
-              {% endfor %}
-            </select>
-            </li>
-            <li>
-            <label>Industry/Career:</label>
-            <select id="industry">
-              <option value="all">All Careers</option>
-              {% for i in industries %}
-              <option value="{{ i }}">{{ i }}</option>
-              {% endfor %}
-            </select>
-            </li>
-          </ul>
-      </form>
-        <a href="#" class="button" type="submit">Find people!</a>
-
-        </header>
-      <section id="content-body">
-            <div id="map"></div>
-        <aside id="list-view">
-        <div class="title">
-          <h2><span id="num_people">0</span> people found near {{ location }}.</h2>
-        </div>
-          <ul>
-            <li class="user">
-            <a href="#">
-              <h3>Lisa Sy</h3>
-              <p>American Studies, 2013</p>
-              <p>Design/Tech</p>
-              <p>San Francisco, CA</p>
-            </a>
-            </li>
-          </ul>
-          </aside>
-          <div id="map-view">
-          </div>
-      </section>
       <footer>
       <div class="container">
         <p>A WesHack 2013 project by 4 people.</p>
       </div>
       </footer>
     </div>
+
     <script type='text/javascript'>
       var mapId = 'ehc.map-shm0r7pp';
 
+      var lat = "";
+      var lng = "";
+{% if lat %}
       var lat = {{ lat }};
+{% endif %}
+{% if lat %}
       var lng = {{ lng }};
+{% endif %}
 
-      var map = L.mapbox.map('map', mapId).setView([lat, lng], 8);
+      if(lat && lng) {
+        var map = L.mapbox.map('map', mapId).setView([lat, lng], 8);
+      } else {
+        var map = L.mapbox.map('map', mapId).setView([38.230062591265984, -98.50], 4);
+      }
       map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp'));
 
 

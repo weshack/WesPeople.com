@@ -9,6 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import send_mail
 from django.contrib.gis.geos import *
 from django.contrib.gis.measure import D
+from django.db.models import Q
 import urllib
 import requests
 import simplejson
@@ -34,25 +35,50 @@ def filter_year(request, from_year, to_year=""):
 
     return render_to_response('maps/index.html', template_values)
 
-def filter_near(request, location, year=None, distance=50):
+def search(request):
     """
     Location string to geocode from mapquest. Distance in miles
     """
-    url = "http://open.mapquestapi.com/geocoding/v1/address?key=Fmjtd%7Cluub2dutn9%2Cbn%3Do5-9u25gr&location=" + location
-    r = requests.get(url)
+    # grab get params
+    year = request.GET.get('year')
+    major = request.GET.get('major')
+    industry = request.GET.get('industry')
+    location = request.GET.get('location')
 
-    latlng = r.json()['results'][0]['locations'][0]['latLng']
-    lat = latlng['lat']
-    lng = latlng['lng']
+    people = Person.geolocated.all()
+    lat = ''
+    lng = ''
 
-    pnt = fromstr("POINT(%s %s)" % (lng, lat))
+    if location:
+      url = "http://open.mapquestapi.com/geocoding/v1/address?key=Fmjtd%7Cluub2dutn9%2Cbn%3Do5-9u25gr&location=" + location
+      r = requests.get(url)
 
-    people = Person.geolocated.filter(location__distance_lte=(pnt, D(mi=distance)))
+      try:
+        latlng = r.json()['results'][0]['locations'][0]['latLng']
+        lat = latlng['lat']
 
+        lng = latlng['lng']
+
+        pnt = fromstr("POINT(%s %s)" % (lng, lat))
+
+        people = people.filter(location__distance_lte=(pnt, D(mi=50)))
+        import pdb; pdb.set_trace()
+      except IndexError:
+        #handle bad geocodes
+        pass
 
     if year:
       people = people.filter(preferred_class_year=year)
 
+    if major:
+      people = people.filter(Q(wesleyan_degree_1_major_1=major) |Q(wesleyan_degree_1_major_2=major) |Q(wesleyan_degree_1_major_3=major))
+
+    if industry:
+      people = people.filter(industry=industry)
+
+
+
+    # slice limit 80
     people = people[0:80]
 
     years = [p.preferred_class_year for p in Person.geolocated.distinct('preferred_class_year')]
@@ -66,26 +92,10 @@ def filter_near(request, location, year=None, distance=50):
 
     ids = [p.pk for p in people]
 
-    template_values = {'people': people, 'distance' : distance, 'location' :
-        location, 'ids' : ids, 'lat': lat, "lng" : lng, 'years' : years,
-        'majors': majors, 'industries' : industries}
+    template_values = {'people': people, 'location' : location, 'ids' : ids,
+        'years' : years, 'majors': majors, 'industries' : industries, 'lat' : lat, 'lng': lng}
 
     return render_to_response('maps/near_results.html', template_values)
-
-def search(request):
-    """
-    search stuff perhaps?
-    """
-
-    if 'general' in request.GET:
-        message = 'You\'re looking for '+ request.GET['general'] + '.'
-    else:
-        message = "You failed"
-
-    template_values = {'test': 'hello',
-                        'message' : message}
-
-    return render_to_response('map.html', template_values)
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
