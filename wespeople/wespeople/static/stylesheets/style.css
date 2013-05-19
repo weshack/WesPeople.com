@@ -317,7 +317,7 @@ a.button {
 header#topBar {
   *zoom: 1;
   display: block;
-  padding: 10px 2.12766%;
+  padding: 0px 2.12766%;
 }
 /* line 18, ../sass/bourbon/addons/_clearfix.scss */
 header#topBar:before, header#topBar:after {
@@ -330,6 +330,7 @@ header#topBar:after {
 }
 /* line 176, ../sass/style.scss */
 header#topBar a#logo img {
+  margin-top: 10px;
   display: block;
   float: left;
   margin-right: 2.12766%;
@@ -340,7 +341,7 @@ header#topBar a#logo img {
 header#topBar a#logo img:last-child {
   margin-right: 0;
 }
-/* line 181, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 header#topBar form {
   margin-bottom: 30px;
   display: block;
@@ -364,37 +365,40 @@ header#topBar form:before, header#topBar form:after {
 header#topBar form:after {
   clear: both;
 }
-/* line 186, ../sass/style.scss */
-header#topBar form input {
-  padding: 4px 10px;
-  display: block;
+/* line 187, ../sass/style.scss */
+header#topBar form ul {
   float: left;
-  margin-right: 3.7037%;
-  width: 70.37037%;
 }
-/* line 41, ../sass/neat/grid/_span-columns.scss */
-header#topBar form input:last-child {
-  margin-right: 0;
+/* line 189, ../sass/style.scss */
+header#topBar form ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 30px;
 }
-/* line 190, ../sass/style.scss */
-header#topBar form a.button {
+/* line 191, ../sass/style.scss */
+header#topBar form ul li label {
+  display: block;
+}
+/* line 197, ../sass/style.scss */
+header#topBar a.button {
   float: right;
+  margin-top: 10px;
   display: block;
   float: left;
   margin-right: 2.12766%;
-  width: 6.38298%;
-  padding: 4px 8px;
+  width: 14.89362%;
+  padding: 10px 8px;
   font-weight: 200;
   background: #1db89c;
   border: none;
   text-shadow: none;
 }
 /* line 41, ../sass/neat/grid/_span-columns.scss */
-header#topBar form a.button:last-child {
+header#topBar a.button:last-child {
   margin-right: 0;
 }
-/* line 198, ../sass/style.scss */
-header#topBar form a.button:hover {
+/* line 206, ../sass/style.scss */
+header#topBar a.button:hover {
   background: #1aa289;
 }
 /* line 162, ../sass/style.scss */
@@ -407,13 +411,13 @@ header#topBar nav ul li {
   display: inline;
   list-style-type: none;
 }
-/* line 206, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 header#topBar nav ul li:last-child {
   margin-right: 0;
 }
 
 /*------- MAIN MAP BODY CONTENT -------*/
-/* line 215, ../sass/style.scss */
+/* line 223, ../sass/style.scss */
 aside#search-box {
   position: absolute;
   z-index: 1000000;
@@ -424,7 +428,7 @@ aside#search-box {
   background-image: -webkit-linear-gradient(#ececec, #efefef);
   background-image: linear-gradient(#ececec, #efefef);
 }
-/* line 225, ../sass/style.scss */
+/* line 233, ../sass/style.scss */
 aside#search-box form {
   display: block;
   float: left;
@@ -435,16 +439,16 @@ aside#search-box form {
 aside#search-box form:last-child {
   margin-right: 0;
 }
-/* line 227, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 aside#search-box form input[type="email"], aside#search-box form input[type="number"], aside#search-box form input[type="password"], aside#search-box form input[type="search"], aside#search-box form input[type="tel"], aside#search-box form input[type="text"], aside#search-box form input[type="url"], aside#search-box form input[type="color"], aside#search-box form input[type="date"], aside#search-box form input[type="datetime"], aside#search-box form input[type="datetime-local"], aside#search-box form input[type="month"], aside#search-box form input[type="time"], aside#search-box form input[type="week"] {
   font-size: 16.18px;
   padding: 10px 20px;
 }
-/* line 231, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 aside#search-box form input[type="text"] {
   margin-bottom: 20px;
 }
-/* line 235, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 aside#search-box a.button {
   border: 1px solid #0d816c;
   border-radius: 3px;
@@ -492,19 +496,19 @@ aside#search-box a.button:disabled {
 aside#search-box a.button:last-child {
   margin-right: 0;
 }
-/* line 243, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 aside#search-box select {
   display: inline-block;
   font-size: 16.18px;
   position: relative;
   margin-right: 30px;
 }
-/* line 248, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 aside#search-box select option {
   font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 255, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 #content-body aside#list-view {
   background: rgba(37, 67, 89, 0.8);
   z-index: 1000000;
@@ -513,27 +517,27 @@ aside#search-box select option {
   top: 80px;
   left: 0;
 }
-/* line 262, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 #content-body aside#list-view .title {
   margin-top: -18px;
   width: 160%;
   background: #254359;
 }
-/* line 266, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 #content-body aside#list-view .title h2 {
   padding: 10px 20px;
 }
-/* line 270, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
 #content-body aside#list-view ul {
   width: 100%;
   margin-top: -18px;
   padding: 0;
 }
-/* line 274, ../sass/style.scss */
+/* line 282, ../sass/style.scss */
 #content-body aside#list-view ul li {
   list-style-type: none;
 }
-/* line 275, ../sass/style.scss */
+/* line 283, ../sass/style.scss */
 #content-body aside#list-view ul li.user a {
   color: white;
   *zoom: 1;
@@ -550,22 +554,22 @@ aside#search-box select option {
 #content-body aside#list-view ul li.user a:after {
   clear: both;
 }
-/* line 280, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 #content-body aside#list-view ul li.user a p {
   margin: 0 auto;
   font-size: 16.18px;
   font-weight: 200;
 }
-/* line 285, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 #content-body aside#list-view ul li.user a h3 {
   margin-bottom: 6px;
 }
-/* line 288, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 #content-body aside#list-view ul li.user a:hover {
   background: #1db89c;
 }
 
-/* line 299, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 #map {
   position: absolute;
   top: 80px;
@@ -574,7 +578,7 @@ aside#search-box select option {
 }
 
 /*------- Footer ---------*/
-/* line 307, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 footer .container {
   margin-top: 40px;
   border-top: 1px solid #bbbbbb;
