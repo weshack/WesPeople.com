@@ -25,6 +25,11 @@ DATABASES = {
     }
 }
 
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = "support@wespeople.com"
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -134,6 +139,7 @@ INSTALLED_APPS = (
 
     'south',
     'tastypie',
+    'djrill',
 )
 
 # A sample logging configuration. The only tangible logging
