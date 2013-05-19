@@ -10,8 +10,17 @@ jQuery(document).ready(function($){
   });
 });
 
-var people = $.getJSON("/api/geoperson", function() {
+var people = $.getJSON("/api/geoperson?preferred_class_year=2012", function(data) {
   console.log( "success" );
+    $.each(data.objects, function (key, val) {
+      lng = val.location.coordinates[0];
+      console.log(lng);
+      lat = val.location.coordinates[1];
+      console.log(lat);
+      name = val.name;
+      var marker = L.marker([lat, lng]).addTo(map);
+      console.log(marker);
+    });
 })
 .done(function() { console.log( "second success" ); })
 .fail(function() { console.log( "error" ); })

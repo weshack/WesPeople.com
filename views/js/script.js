@@ -9,5 +9,10 @@ jQuery(document).ready(function($){
     });
   });
 });
-
+var geojson = $.getJSON("http://localhost:8000/api/geoperson?callback=test", function() {
+  console.log( "success" );
+})
+.done(function() { console.log( "second success" ); })
+.fail(function() { console.log( "error" ); })
+.always(function() { console.log( "complete" ); });
 
