@@ -92,7 +92,8 @@ def register(request):
             match = Person.objects.filter(preferred_email=form['email'].value())
             msg = "You have created a new account at wespeople.com."
             if match:
-                new_user.person = match[0]
+                match[0].user = new_user
+                match[0].save()
                 msg += "\n\nWe have found an existing profile for you based on your email address."
             send_mail("New account created", msg,
               "<support@wespeople.com>", [form['email'].value()])
