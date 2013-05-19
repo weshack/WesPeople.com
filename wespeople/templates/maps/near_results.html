@@ -17,6 +17,10 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" src="/static/js/leaflet.markercluster.js"></script>
     <script type="text/javascript">
+      var ids = [];
+      {% for id in ids %}
+      ids.push({{ id }});
+      {% endfor %}
       var from_year;
       var to_year;
       {% if from_year %}
@@ -26,33 +30,15 @@
       to_year = {{ to_year }}
       {% endif %}
 
-
       jQuery(document).ready(function($){
         markers = new L.MarkerClusterGroup();
-        if (from_year && to_year) {
-          var url = "/api/geoperson?preferred_class_year__range=" + from_year + "," + to_year;
-        } else if (from_year) {
-          var url = "/api/geoperson?preferred_class_year=" + from_year;
-        } else {
-          var url = "/api/geoperson?preferred_class_year__gte=2000"
-        }
-        load_people(url, "");
-        jQuery('#location-search').submit(function(e) {
-            var s = $('#myForm :input');
-            console.log(s);
-            e.preventDefault();
-            $.getJSON(("http://open.mapquestapi.com/geocoding/v1/address?key=Fmjtd%7Cluub2dutn9%2Cbn%3Do5-9u25gr&location=" + s + "&callback=renderGeocode"), function(data) {
-              console.log(data);
-                var values = {};
-                    s.each(function() {
-                              values[this.name] = $(this).val();
-                                  });
 
-            });
-            return false;
-        });
+
+      for (var i in ids){
+      load_people("/api/geoperson/" + ids[i], "");
+      }
+
       });
-
     </script>
 
   </head>
@@ -61,58 +47,55 @@
     <div id="main-maps">
       <header id="topBar" class="container">
       <a href="#" id="logo"><img src="/static/img/wespeople-logo.png"></a>
-      <form action="/filter" method="get">
-        <input type="text" id="location-search" class="text" value="" name="general" placeholder="Search for Wesleyan people by zipcode or city." /> 
+      <form action="" method="post">
+        <input type="text" id="location-search" class="text" value="" name="" placeholder="Search" />
+      </form>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Your Profile</a>
+            </li>
+            <li>
+            <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="index.html">Sign Out</a>
+            </li>
+          </ul>
+        </nav>
+        </header>
+
+      <aside id="search-box">
+        <div class="container">
+          <!-- <h2>Search for Wesleyan people; -->
+            <!-- There are 41,000 of us so far.</h2> -->
+          <form action="/filter" method="get">
+            <input type="text" placeholder="Search for Wesleyan people by zipcode or city." name="general" value="" />             
             <label>Class Year:</label>
               <select id="classyear">
-                <option value="all">all</option>
                 <option value="2013">2013</option>
-                <option value="2012">2012<option>
+                <option value="2012">2012</option>
                 <option value="2011">2011</option>
                 <option value="2010">2010</option>
               </select>
 
             <label>Major:</label>
             <select id="major">
-              <option value="all">all</option>
               <option value="American Studies">American Studies</option>
               <option value="Computer Science">Computer Science</option>
             </select>
             <label>Industry/Career:</label>
             <select id="industry">
-              <option value="all">all</option>
               <option value="American Studies">American Studies</option>
               <option value="Computer Science">Computer Science</option>
             </select>
-      </form>
-        <a href="#" class="button" type="submit">Find people!</a>
-        
-        <!-- <nav> -->
-        <!--   <ul> -->
-        <!--     <li> -->
-        <!--       <a href="#">Your Profile</a> -->
-        <!--     </li> -->
-        <!--     <li> -->
-        <!--     <a href="#">Settings</a> -->
-        <!--     </li> -->
-        <!--     <li> -->
-        <!--       <a href="index.html">Sign Out</a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </nav> -->
-        </header>
-
-      <!-- <aside id="search-box"> -->
-      <!--   <div class="container"> -->
-      <!--     <form action="/filter" method="get"> -->
-            <!-- <input type="text" placeholder="Search for Wesleyan people by zipcode or city." name="general" value="" />              -->
-            <!-- <input type="checkbox" name="" value="">Interested in Contact</input> -->
-			<!-- <button type="submit" class="button">Find people!</button> -->
-          <!-- </form> -->
-			<!-- {{ message }} -->
+            <input type="checkbox" name="" value="">Interested in Contact</input>
+			<button type="submit" class="button">Find people!</button>
+          </form>
+			{{ message }}
           
-        <!-- </div> -->
-        <!-- </aside> -->
+        </div>
+        </aside>
         
       <section id="content-body">
             <div id="map"></div>
@@ -124,7 +107,8 @@
             <li class="user">
             <a href="#">
               <h3>Lisa Sy</h3>
-              <p>American Studies, 2013</p>
+              <p>Class of 2013</p>
+              <p>American Studies</p>
               <p>Design/Tech</p>
               <p>San Francisco, CA</p>
             </a>

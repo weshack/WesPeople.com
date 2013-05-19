@@ -12,29 +12,6 @@ jQuery(document).ready(function($){
     });
   });
 
-  markers = new L.MarkerClusterGroup();
-  if (from_year && to_year) {
-    var url = "/api/geoperson?preferred_class_year__range=" + from_year + "," + to_year;
-  } else if (from_year) {
-    var url = "/api/geoperson?preferred_class_year=" + from_year;
-  } else {
-    var url = "/api/geoperson?preferred_class_year__gte=2000"
-  }
-  load_people(url, "");
-  jQuery('#location-search').submit(function(e) {
-      var s = $('#myForm :input');
-      console.log(s);
-      e.preventDefault();
-      $.getJSON(("http://open.mapquestapi.com/geocoding/v1/address?key=Fmjtd%7Cluub2dutn9%2Cbn%3Do5-9u25gr&location=" + s + "&callback=renderGeocode"), function(data) {
-        console.log(data);
-          var values = {};
-              s.each(function() {
-                        values[this.name] = $(this).val();
-                            });
-
-      });
-      return false;
-  });
 });
 
 function load_people(filters, url) {
