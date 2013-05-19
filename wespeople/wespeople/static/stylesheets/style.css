@@ -63,7 +63,8 @@
   clear: both;
 }
 
-/* line 28, ../sass/style.scss */
+/*------- Mixins ----------*/
+/* line 42, ../sass/style.scss */
 header#topBar {
   *zoom: 1;
   max-width: 68em;
@@ -79,7 +80,7 @@ header#topBar:before, header#topBar:after {
 header#topBar:after {
   clear: both;
 }
-/* line 30, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 header#topBar a#logo {
   display: block;
   float: left;
@@ -90,7 +91,19 @@ header#topBar a#logo {
 header#topBar a#logo:last-child {
   margin-right: 0;
 }
-/* line 36, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
+header#topBar nav {
+  display: block;
+  float: left;
+  margin-right: 2.12766%;
+  width: 57.44681%;
+  margin-left: 17.02128%;
+}
+/* line 41, ../sass/neat/grid/_span-columns.scss */
+header#topBar nav:last-child {
+  margin-right: 0;
+}
+/* line 54, ../sass/style.scss */
 header#topBar form {
   display: block;
   float: left;
@@ -104,7 +117,7 @@ header#topBar form:last-child {
   margin-right: 0;
 }
 @media screen and (max-width: 768px) {
-  /* line 36, ../sass/style.scss */
+  /* line 54, ../sass/style.scss */
   header#topBar form {
     display: block;
     float: left;
@@ -116,7 +129,7 @@ header#topBar form:last-child {
     margin-right: 0;
   }
 }
-/* line 43, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 header#topBar form input[type="text"] {
   *zoom: 1;
   display: block;
@@ -130,7 +143,7 @@ header#topBar form input[type="text"]:before, header#topBar form input[type="tex
 header#topBar form input[type="text"]:after {
   clear: both;
 }
-/* line 48, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 header#topBar form ul {
   margin-right: 0;
   width: 100%;
@@ -143,7 +156,7 @@ header#topBar form ul {
 header#topBar form ul:last-child {
   margin-right: 0;
 }
-/* line 57, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 header#topBar form input.button {
   margin-top: 20px;
   display: block;
@@ -156,8 +169,18 @@ header#topBar form input.button {
 header#topBar form input.button:last-child {
   margin-right: 0;
 }
+/* line 31, ../sass/style.scss */
+header#topBar form nav ul {
+  float: right;
+}
+/* line 33, ../sass/style.scss */
+header#topBar form nav ul li {
+  margin-left: 20px;
+  display: inline;
+  list-style-type: none;
+}
 
-/* line 64, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 footer {
   display: block;
   float: left;
@@ -171,60 +194,60 @@ footer:last-child {
 }
 
 /*------------- Global --------------*/
-/* line 71, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* line 77, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 body {
   font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444444;
 }
 
-/* line 82, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 html, html a, input {
   -webkit-font-smoothing: antialiased !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
-/* line 87, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 h1 {
-  font-size: 33.88641px;
+  font-size: 50.82961px;
 }
 
-/* line 88, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 h2 {
-  font-size: 20.94339px;
+  font-size: 31.41509px;
 }
 
-/* line 89, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 h3 {
   font-size: 19.416px;
 }
 
-/* line 90, ../sass/style.scss */
-p {
-  font-size: 14.562px;
+/* line 111, ../sass/style.scss */
+p, a {
+  font-size: 19.416px;
 }
 
-/* line 94, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 a {
   color: #1db89c;
   text-decoration: none;
-  -webkit-transition: all, 0.25s, ease-in-out;
-  -moz-transition: all, 0.25s, ease-in-out;
-  transition: all, 0.25s, ease-in-out;
+  -webkit-transition: color, 0.5s, ease-in-out;
+  -moz-transition: color, 0.5s, ease-in-out;
+  transition: color, 0.5s, ease-in-out;
 }
-/* line 98, ../sass/style.scss */
+/* line 119, ../sass/style.scss */
 a:hover {
   color: #137664;
 }
 
 /*---------- Buttons ----------*/
-/* line 104, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 a.button {
   border: 1px solid #0d816c;
   border-radius: 3px;
@@ -242,6 +265,9 @@ a.button {
   text-shadow: 0 1px 0 #07725f;
   background-clip: padding-box;
   text-align: center;
+  background: #1db89c;
+  border: none;
+  box-shadow: none;
 }
 /* line 79, ../sass/bourbon/addons/_button.scss */
 a.button:hover:not(:disabled) {
@@ -263,7 +289,7 @@ a.button:disabled {
   cursor: not-allowed;
 }
 
-/* line 108, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 input.button {
   border: 1px solid #0d816c;
   border-radius: 3px;
@@ -303,7 +329,7 @@ input.button:disabled {
 }
 
 /*--------- Sign Up/Log In Forms -------*/
-/* line 113, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .background-gradient {
   margin: -5px;
   padding-bottom: 160px;
@@ -315,15 +341,15 @@ input.button:disabled {
   background: linear-gradient( white, #efefef) left repeat;
 }
 
-/* line 123, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 #landing-signin {
   margin-top: 30px;
 }
-/* line 125, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 #landing-signin h1, #landing-signin h2, #landing-signin h3 {
   text-align: center;
 }
-/* line 127, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #landing-signin header img {
   display: block;
   float: left;
@@ -338,16 +364,16 @@ input.button:disabled {
   margin-right: 0;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 161, ../sass/style.scss */
 #initialSignLogIn {
   margin-top: 50px;
 }
-/* line 139, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 #initialSignLogIn input, #initialSignLogIn a.button {
   margin-bottom: 20px;
   display: block;
 }
-/* line 143, ../sass/style.scss */
+/* line 167, ../sass/style.scss */
 #initialSignLogIn .alternative {
   padding: 30px;
   background: white;
@@ -358,7 +384,7 @@ input.button:disabled {
   text-align: center;
 }
 
-/* line 154, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
@@ -366,26 +392,26 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   border-radius: 6px;
   border: 1px solid #bbbbbb;
 }
-/* line 158, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus {
   outline: none;
   box-shadow: 0 0 10px #9ecaed;
   border: 1px solid #9ecaed;
 }
 
-/* line 165, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], a.button {
   font-size: 16.18px;
   padding: 20px;
   width: 100%;
 }
 
-/* line 171, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 a.button {
   width: auto;
 }
 
-/* line 175, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 .box {
   background-color: #efefef;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #ececec));
@@ -397,72 +423,96 @@ a.button {
   height: 100%;
 }
 
-/* line 184, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 .signup-container {
   display: none;
 }
 
-/*------- Mixins ----------*/
 /*------ Top Navigation Bar ------*/
-/* line 200, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 header#topBar {
   padding: 16px 2.12766%;
 }
-/* line 202, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 header#topBar a#logo img {
-  margin-top: 10px;
   float: left;
-  width: 100%;
   height: auto;
+  margin-top: 10px;
+  width: 100%;
 }
-/* line 210, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
+header#topBar nav ul {
+  float: right;
+}
+/* line 33, ../sass/style.scss */
+header#topBar nav ul li {
+  margin-left: 40px;
+  display: inline;
+  list-style-type: none;
+}
+/* line 225, ../sass/style.scss */
+header#topBar nav ul li a.search-link {
+  text-transform: uppercase;
+  box-shadow: none;
+  background: white;
+  border: 4px solid #1db89c;
+  text-shadow: none;
+  color: #1db89c;
+  padding: 12px 18px;
+}
+/* line 233, ../sass/style.scss */
+header#topBar nav ul li a.search-link:hover {
+  background: #1db89c;
+  color: white;
+}
+/* line 241, ../sass/style.scss */
 header#topBar form {
   margin-bottom: 20px;
 }
-/* line 213, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 header#topBar form input {
   padding: 6px 20px;
 }
-/* line 216, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 header#topBar form ul {
   float: left;
 }
-/* line 218, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 header#topBar form ul li {
   list-style-type: none;
   display: inline-block;
   margin-right: 30px;
 }
-/* line 220, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 header#topBar form ul li label {
   color: #bbbbbb;
   display: block;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 228, ../sass/style.scss */
+/* line 259, ../sass/style.scss */
 header#topBar form ul li select {
   width: 100px;
 }
-/* line 234, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 header#topBar input.button {
-  float: right;
-  margin-top: 10px;
-  padding: 10px 8px;
-  font-weight: 200;
   background: #1db89c;
   border: none;
+  float: right;
   font-size: 16.18px;
+  font-weight: 200;
   font-weight: bold;
-  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 10px 8px;
   text-shadow: none;
+  text-transform: uppercase;
 }
-/* line 245, ../sass/style.scss */
+/* line 276, ../sass/style.scss */
 header#topBar input.button:hover {
   background: #1aa289;
 }
 
-/* line 253, ../sass/style.scss */
+/* line 284, ../sass/style.scss */
 #content-body aside#list-view {
   z-index: 1000000;
   background: #254359;
@@ -470,33 +520,38 @@ header#topBar input.button:hover {
   color: white;
   left: 0;
 }
-/* line 259, ../sass/style.scss */
+/* line 290, ../sass/style.scss */
 #content-body aside#list-view .title {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0;
 }
-/* line 264, ../sass/style.scss */
+/* line 295, ../sass/style.scss */
 #content-body aside#list-view .title h2 {
   padding: 10px 20px;
 }
 
-/* line 190, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
+footer {
+  background: rgba(37, 67, 89, 0.8);
+  color: white;
+}
+/* line 31, ../sass/style.scss */
 footer nav ul {
   float: right;
 }
-/* line 192, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 footer nav ul li {
   margin-left: 10px;
   display: inline;
   list-style-type: none;
 }
-/* line 275, ../sass/style.scss */
+/* line 308, ../sass/style.scss */
 footer nav ul li:last-child {
   margin-right: 0;
 }
 
-/* line 281, ../sass/style.scss */
+/* line 314, ../sass/style.scss */
 #map {
   bottom: 40px;
   width: 100%;
@@ -504,20 +559,20 @@ footer nav ul li:last-child {
   position: absolute;
 }
 
-/* line 288, ../sass/style.scss */
+/* line 321, ../sass/style.scss */
 #map, #list-view {
   top: 130px;
 }
 
 /*------ User Profile ------ */
-/* line 296, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 .map-holder {
   background-color: rgba(0, 0, 0, 0.4);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(26, 26, 26, 0.4)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
 }
-/* line 298, ../sass/style.scss */
+/* line 331, ../sass/style.scss */
 .map-holder .text-holder {
   *zoom: 1;
   display: block;
@@ -531,30 +586,30 @@ footer nav ul li:last-child {
 .map-holder .text-holder:after {
   clear: both;
 }
-/* line 300, ../sass/style.scss */
+/* line 333, ../sass/style.scss */
 .map-holder .text-holder h1, .map-holder .text-holder h2, .map-holder .text-holder h3, .map-holder .text-holder h4, .map-holder .text-holder p, .map-holder .text-holder a, .map-holder .text-holder small {
   color: white;
 }
-/* line 303, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 .map-holder .text-holder h1 {
   float: left;
 }
-/* line 304, ../sass/style.scss */
+/* line 337, ../sass/style.scss */
 .map-holder .text-holder h3 {
   float: right;
 }
 
-/* line 310, ../sass/style.scss */
+/* line 343, ../sass/style.scss */
 .profile-content ul li {
   list-style-type: none;
 }
-/* line 312, ../sass/style.scss */
+/* line 345, ../sass/style.scss */
 .profile-content ul li span.title-label {
   font-weight: bold;
 }
 
 /*------- Footer ---------*/
-/* line 320, ../sass/style.scss */
+/* line 353, ../sass/style.scss */
 footer .container {
   position: absolute;
   bottom: 0;
@@ -566,13 +621,13 @@ footer .container {
 
 /* ------- RESPONSIVE -----------*/
 @media screen and (max-width: 1170px) {
-  /* line 331, ../sass/style.scss */
+  /* line 364, ../sass/style.scss */
   #map, #list-view {
     top: 160px;
   }
 }
 @media screen and (max-width: 769px) {
-  /* line 331, ../sass/style.scss */
+  /* line 364, ../sass/style.scss */
   #map, #list-view {
     top: 200px;
   }
