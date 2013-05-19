@@ -43,6 +43,7 @@ $charcoal: #444;
 
 footer{
   @include span-columns(12);
+  text-align: center;
 }
 
 
@@ -242,6 +243,7 @@ aside#search-box{
     position: absolute;
     color: white;
     top: 210px;
+    left:0;
     .title{
       margin-top: -20px;
       background: rgba(37,67,89,0.8);
@@ -250,17 +252,19 @@ aside#search-box{
       }
     }
     ul{
+      margin-top: -20px;
       li.user{
         @include row();
         // border-top: 1px solid $first;
         // padding: 10px;
-        margin-left: 0px;
         border-bottom: 1px solid $first;
+        padding: 20px 0;
         a{
+          color: white;
           // color: lighten($teal, 30%);        
         }
         p{
-          margin-bottom: 0px;
+          margin: 0 auto;
           font-size: golden-ratio(10px,1);
           font-weight: 200;
         }
@@ -283,4 +287,5 @@ aside#search-box{
 footer .container{
   margin-top: 40px;
   border-top: 1px solid $first;
+  text-align: center;
 }
