@@ -23,15 +23,18 @@ $charcoal: #444;
     }
   }
 }
-
-#main-maps{
-  header{}
-  aside#search-box{
-    @include row();
-    @include span-columns(12 of 12);
+header#topBar{
+  @include outer-container();
+  a#logo img{
+    @include span-columns(3 of 12);
+  }
+  form{
+    @include span-columns(8 or 12);
+    @include shift(1);
+    input{}
+    a.button{}
   }
 }
-
 footer{
   @include span-columns(12);
   text-align: center;
@@ -166,34 +169,29 @@ a.button{
 }
 /*------ Top Navigation Bar ------*/
 header#topBar{
-  @include row();
-  @include pad(0px default);
-  // border-bottom: 4px solid $charcoal;
+  @include pad(6px default);
   a#logo img{
-    // @include size(300px auto);
     margin-top: 10px;
-    @include span-columns(3 of 12);
     float:left;
   }
   form{
     margin-bottom: 30px;
-    @include span-columns(6 of 12);
-    @include shift(1);
-    @include row();
+    input{
+      padding: 6px 20px;
+    }
     ul{
       float: left;
       li{
         list-style-type: none;
         label{display: block;}
         display: inline-block;
-        margin-left: 30px;
+        margin-right: 30px;
       }
     }
 }
     a.button{
       float: right;
       margin-top: 10px;
-      @include span-columns(2);
       padding: 10px 8px;
       font-weight: 200;
       background: $teal;
@@ -210,47 +208,6 @@ header#topBar{
       li:last-child{
         margin-right: 0;
       }
-    }
-  }
-}
-
-/*------- MAIN MAP BODY CONTENT -------*/
-
-aside#search-box{
-  // color: white;
-  position: absolute;
-  // top: 70px;
-  z-index: 1000000;
-  border-bottom: 1px solid $third;
-  padding: 20px;
-  @include linear-gradient($second,$third);
-  // background: lighten($third, 30%);
-  // background: rgba(0,0,0,0.5);
-  form{
-    @include span-columns(10 of 12);
-    #{$all-text-inputs}{
-      font-size: golden-ratio(10px, 1);
-      padding: 10px 20px;
-    }
-    input[type="text"]{
-      margin-bottom: 20px;
-    }
-  }
-  a.button{
-    @include button($teal);
-    @include span-columns(2 of 12);
-    // @include span-columns(2 of 12);
-    float:right;
-    font-size: golden-ratio(10px,1);
-    padding: 10px 30px;
-  }
-  select{
-    display: inline-block;
-    font-size: golden-ratio(10px,1);
-    position: relative;
-    margin-right: 30px;
-    option{
-      font-family: "futura-pt", $helvetica;
     }
   }
 }
@@ -280,7 +237,7 @@ aside#search-box{
         color: white;
         @include row();
         border-bottom: 1px solid $first;
-        padding-left: 20px;
+        pUsadding-left: 20px;
         p{
           margin: 0 auto;
           font-size: golden-ratio(10px,1);
@@ -302,9 +259,36 @@ aside#search-box{
 
 #map{
    position:absolute; 
-   top: 80px; 
+   top: 110px; 
    bottom:0; 
    width:100%;
+}
+
+/*------ User Profile ------ */
+$darkgradient: rgba(0,0,0,0.4);
+$lightgradient: lighten($darkgradient, 10%);
+
+.map-holder{
+  @include linear-gradient($darkgradient,$lightgradient);
+  .text-holder{
+    @include row();
+    h1,h2,h3,h4,p,a,small{
+      color: white;
+    }
+    h1{float:left;}
+    h3{float:right;}
+  }
+}
+
+.profile-content{
+  ul{
+    li{
+      list-style-type: none;
+      span.title-label{
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 /*------- Footer ---------*/
@@ -313,3 +297,15 @@ footer .container{
   border-top: 1px solid $first;
   text-align: center;
 }
+
+/* ------- RESPONSIVE -----------*/
+
+#map{
+  @include media(max-width 1170px){
+    top: 160px;
+  }
+  @include media(max-width 769px){
+    top: 200px;
+  }
+}
+
