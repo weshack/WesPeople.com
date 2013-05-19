@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.gis import admin
+from django.conf.urls.defaults import *
 from tastypie.api import Api
 from maps.api import PersonResource
+from maps.models import Person
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 admin.autodiscover()
+from djgeojson.views import GeoJSONLayerView
 
 people = PersonResource()
 
@@ -20,5 +23,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     (r'^index/$', 'maps.views.map_test'),
+    url(r'^data.geojson$', GeoJSONLayerView.as_view(model=Person), name='data'),
     url(r'^api/', include(people.urls)),
 )
