@@ -27,4 +27,6 @@ urlpatterns = patterns('',
     url(r'^api/', include(people.urls)),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
                 {'document_root': settings.MEDIA_ROOT}),
+    # (r'^admin/(?P<path>.*)$', 'django.views.static.serve',
+    #             {'document_root': settings.ADMIN_MEDIA_PREFIX}),
 )

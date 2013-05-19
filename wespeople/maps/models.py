@@ -57,6 +57,7 @@ class Person(models.Model):
 
   people = models.Manager()
   geolocated = PersonLocationManager()
+  
 
   def __unicode__(self):
     if self.first_name and self.last_name:

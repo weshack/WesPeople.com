@@ -55,6 +55,8 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__),'static')
 
+# ADMIN_MEDIA_PREFIX = os.path.join(os.path.dirname(__file__),'static/admin')
+
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
@@ -68,7 +70,7 @@ STATIC_ROOT = PROJECT_PATH + '/static/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'http://static.example.com/'
+STATIC_URL = 'wespeople.com/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
