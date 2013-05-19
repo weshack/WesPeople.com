@@ -1,7 +1,7 @@
 {% block searchfilter %}
 
-<form action="/filter" method="get">
-  <input type="text" placeholder="Search by city or zipcode.">
+<form method="get" id="location-search">
+  <input type="text" id="location-search-input" placeholder="Search by city or zipcode.">
    <ul>
   <li>
       <label>Class Year:</label>
@@ -33,6 +33,18 @@
     </ul>
 </form>
   <a href="#" class="button" type="submit">Find people!</a>
+
+  <script>
+jQuery(document).ready(function($){
+  console.log("Got this");
+  $("#location-search").submit(function(e) {
+    console.log(e);
+    var search = $("#location-search-input").val()
+    window.location = "/near/" + search;
+    e.preventDefault();
+    });
+});
+  </script>
 
 
 {% endblock %}
