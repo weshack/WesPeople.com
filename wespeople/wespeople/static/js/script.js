@@ -22,11 +22,17 @@ function load_people(url, filters) {
         var degree1 = val.wesleyan_degree_1_major_1;
         var degree2 = val.wesleyan_degree_1_major_2;
         var degree3 = val.wesleyan_degree_1_major_3;
+        var email = val.preferred_email;
+
         if (degree2 != "") {
           degree1 = degree1 + "<br />" + degree2;
         } 
         if (degree3 !=  "") {
           degree1 = degree1 + "<br />" + degree3;
+        }
+
+        if (email != "") {
+          email = "<i class='icon-envelope-alt'></i> " + "<a href='mailto:" + email + "'>" + email + "</a>" + "<br />";
         }
 
         var industry = val.industry;
@@ -39,7 +45,7 @@ function load_people(url, filters) {
         var marker = new L.marker([lat, lng]);
         // var marker = L.circleMarker([lat, lng], 200)
         //marker.bindPopup("<p><b>" + name + "</b>" + " " + year + "</br />" + degree1 + "<br /> " + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
-        marker.bindPopup("<p><b>" + name + "</b><br />" + "<i class='icon-certificate'></i> Class of " + year + "<br /><i class='icon-book'></i> " + degree1 + "<br />" + industry + "<br />" + city + ", " + state + ", " + country + "</p>");
+        marker.bindPopup("<p><b>" + name + "</b><br />" + "<i class='icon-certificate'></i> Class of " + year + "<br />" + email + "<i class='icon-book'></i> " + degree1 +  industry + "<br />" + city + ", " + state + ", " + country + "</p>");
         markers.addLayer(marker);
         people.push(val)
         jQuery("span#num_people").html(people.length);
