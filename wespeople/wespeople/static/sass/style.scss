@@ -8,6 +8,7 @@ $second: #ececec;
 $third: #efefef;
 $teal: #1DB89C;
 $charcoal: #444;
+$darkblue: rgba(37,67,89,0.8);
 
 // Grid
 .container{
@@ -22,17 +23,42 @@ $charcoal: #444;
       }
     }
   }
+  // header#topBar{}
 }
 header#topBar{
   @include outer-container();
-  a#logo img{
-    @include span-columns(3 of 12);
+  a#logo{
+    @include span-columns(3);
+    // @include media($tablet){
+    //   @include span-columns(12);
+    // }
   }
   form{
-    @include span-columns(8 or 12);
+    @include span-columns(8);
     @include shift(1);
-    input{}
-    a.button{}
+    @include omega();
+    @include media($tablet){
+      @include span-columns(6);
+    }
+    input[type="text"]{
+      // @include span-columns(8 of 8);
+      @include row();
+      // @include omega();
+    }
+    ul{
+      @include omega();
+      @include fill-parent;
+      @include span-columns(6 of 8);
+      li{
+        // @include omega(3n);
+        // @include span-columns(2);
+      }
+     }
+    input.button{
+      margin-top: 20px;
+      @include span-columns(2 of 8);
+      @include omega();
+    }
   }
 }
 footer{
@@ -53,7 +79,7 @@ body{
   color: $charcoal;
 }
 
-html, html a{
+html, html a, input{
   -webkit-font-smoothing: antialiased !important;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
@@ -79,7 +105,10 @@ a.button{
   @include button($teal);
   text-align: center;
 }
-
+input.button{
+  @include button($teal);
+  font-family: "futura-pt", $helvetica;
+}
 /*--------- Sign Up/Log In Forms -------*/
 .background-gradient{
   margin: -5px;
@@ -169,13 +198,17 @@ a.button{
 }
 /*------ Top Navigation Bar ------*/
 header#topBar{
-  @include pad(6px default);
+  @include pad(16px default);
   a#logo img{
     margin-top: 10px;
     float:left;
+    // margin-left: -30px;
+    width: 100%;
+    // display: block;
+    height: auto;
   }
   form{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     input{
       padding: 6px 20px;
     }
@@ -183,19 +216,29 @@ header#topBar{
       float: left;
       li{
         list-style-type: none;
-        label{display: block;}
+        label{
+          display: block;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
         display: inline-block;
         margin-right: 30px;
+        select{
+          width: 100px;
+        }
       }
     }
 }
-    a.button{
+    input.button{
       float: right;
       margin-top: 10px;
       padding: 10px 8px;
       font-weight: 200;
       background: $teal;
       border:none;
+      font-size: golden-ratio(10px, 1);
+      font-weight: bold;
+      text-transform: uppercase;
       text-shadow: none;
       &:hover{
         background: darken($teal, 5%);
@@ -218,7 +261,6 @@ header#topBar{
     z-index: 1000000;
     position: absolute;
     color: white;
-    top: 80px;
     left:0;
     .title{
       margin-top: -18px;
@@ -244,7 +286,7 @@ header#topBar{
           font-weight: 200;
         }
         h3{
-          margin-bottom: 6px;
+        }        margin-bottom: 6px;
         }
         &:hover{
           background: $teal;
@@ -255,13 +297,17 @@ header#topBar{
   div#map-view{
     // border: 4px solid $first;
   }
-}
+
 
 #map{
+  border-top: 8px solid $darkblue;
    position:absolute; 
-   top: 110px; 
    bottom:0; 
    width:100%;
+}
+
+#map,#content-body{
+  top:130px;
 }
 
 /*------ User Profile ------ */
