@@ -13,8 +13,8 @@ import urllib
 import requests
 import simplejson
 
-
 from maps.models import Person
+from maps.models import AuthUser
 
 def index(request):
     """
@@ -89,6 +89,7 @@ def register(request):
         form = UserCreateForm(request.POST)
         if form.is_valid():
             new_user = form.save()
+            match = Person.objects.filter(preferred_email=form['email'].value())
             send_mail("New account created", "This will get sent through mandrill",
               "Djrill Sender <support@wespeople.com>", [form['email'].value()])
             return HttpResponseRedirect("/")

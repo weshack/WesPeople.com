@@ -65,7 +65,7 @@ class Person(models.Model):
   geolocated = PersonLocationManager()
   names = PersonNameManager()
 
-  user = models.OneToOneField(User)
+  #user = models.OneToOneField(User)
 
   def makeName(self):
     n = self.name.split(',')
