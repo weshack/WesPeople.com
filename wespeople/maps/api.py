@@ -5,8 +5,15 @@ from tastypie.authorization import Authorization, ReadOnlyAuthorization
 
 class PersonResource(ModelResource):
   class Meta:
-    queryset = Person.objects.all()
+    queryset = Person.geolocated.all()
     resource_name = 'geoperson'
+
+    #fields = ['name', 'location', 'preferred_class_year']
+    filtering = {
+      'preferred_class_year': 'exact',
+    }
+
+    limit = 0
     #list_allowed_methods = ['get', 'post']
     #authorization = ReadOnlyAuthorization
 
