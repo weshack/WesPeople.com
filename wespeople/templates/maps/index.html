@@ -3,61 +3,43 @@
     <div id="main-maps">
       <header id="topBar" class="container">
       <a href="#" id="logo"><img src="/static/img/wespeople-logo.png"></a>
-      <form action="/filter" method="get">
-        <ul>
-        <li>
-            <label>Class Year:</label>
-              <select id="classyear">
-                <option value="all">All Grad Year</option>
-                <option value="2013">2013</option>
-                <option value="2012">2012</option>
-                <option value="2011">2011</option>
-                <option value="2010">2010</option>
-              </select>
-              </li>
+      {% include "partials/searchfilter.html" %}
+      {# <form action="/filter" method="get"> #}
+        {#   <ul> #}
+        {#   <li> #}
+        {#       <label>Class Year:</label> #}
+        {#         <select id="classyear"> #}
+        {#           <option value="all">All Grad Year</option> #}
+        {#           <option value="2013">2013</option> #}
+        {#           <option value="2012">2012</option> #}
+        {#           <option value="2011">2011</option> #}
+        {#           <option value="2010">2010</option> #}
+        {#         </select> #}
+        {#         </li> #}
 
-              <li>
-            <label>Major:</label>
-            <select id="major">
-              <option value="all">All Majors</option>
-              <option value="American Studies">American Studies</option>
-              <option value="Computer Science">Computer Science</option>
-            </select>
-            </li>
-            <li>
-            <label>Industry/Career:</label>
-            <select id="industry">
-              <option value="all">All Careers</option>
-              <option value="American Studies">American Studies</option>
-              <option value="Computer Science">Computer Science</option>
-            </select>
-            </li>
-          </ul>
-      </form>
-        <a href="#" class="button" type="submit">Find people!</a>
+        {#         <li> #}
+        {#       <label>Major:</label> #}
+        {#       <select id="major"> #}
+        {#         <option value="all">All Majors</option> #}
+        {#         <option value="American Studies">American Studies</option> #}
+        {#         <option value="Computer Science">Computer Science</option> #}
+        {#       </select> #}
+        {#       </li> #}
+        {#       <li> #}
+        {#       <label>Industry/Career:</label> #}
+        {#       <select id="industry"> #}
+        {#         <option value="all">All Careers</option> #}
+        {#         <option value="American Studies">American Studies</option> #}
+        {#         <option value="Computer Science">Computer Science</option> #}
+        {#       </select> #}
+        {#       </li> #}
+        {#     </ul> #}
+        {# </form> #}
+        {#   <a href="#" class="button" type="submit">Find people!</a> #}
 
         </header>
-      <section id="content-body">
-            <div id="map"></div>
-        <aside id="list-view">
-        <div class="title">
-          <h2><span id="num_people">0</span> people found.</h2>
-        </div>
-          <ul>
-            <li class="user">
-            <a href="#">
-              <h3>Lisa Sy</h3>
-              <p>American Studies, 2013</p>
-              <p>Design/Tech</p>
-              <p>San Francisco, CA</p>
-            </a>
-            </li>
-          </ul>
-          </aside>
-          <div id="map-view">
-          </div>
-      </section>
-      <footer>
+        <div id="map"></div>
+    <footer>
       <div class="container">
         <p>A WesHack 2013 project by 4 people.</p>
       </div>

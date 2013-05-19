@@ -1,0 +1,38 @@
+{% block searchfilter %}
+
+<form action="/filter" method="get">
+  <input type="text" placeholder="Search by city or zipcode.">
+   <ul>
+  <li>
+      <label>Class Year:</label>
+        <select id="classyear">
+          <option value="all">All Grad Year</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+        </select>
+        </li>
+
+        <li>
+      <label>Major:</label>
+      <select id="major">
+        <option value="all">All Majors</option>
+        <option value="American Studies">American Studies</option>
+        <option value="Computer Science">Computer Science</option>
+      </select>
+      </li>
+      <li>
+      <label>Industry/Career:</label>
+      <select id="industry">
+        <option value="all">All Careers</option>
+        <option value="American Studies">American Studies</option>
+        <option value="Computer Science">Computer Science</option>
+      </select>
+      </li>
+    </ul>
+</form>
+  <a href="#" class="button" type="submit">Find people!</a>
+
+
+{% endblock %}
