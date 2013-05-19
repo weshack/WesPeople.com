@@ -62,18 +62,18 @@ def search(request):
         pnt = fromstr("POINT(%s %s)" % (lng, lat))
 
         people = people.filter(location__distance_lte=(pnt, D(mi=50)))
-        import pdb; pdb.set_trace()
       except IndexError:
         #handle bad geocodes
-        pass
+        #pass
+        print
 
-    if year:
+    if year and year != "all" :
       people = people.filter(preferred_class_year=year)
 
-    if major:
+    if major and major != "all" :
       people = people.filter(Q(wesleyan_degree_1_major_1=major) |Q(wesleyan_degree_1_major_2=major) |Q(wesleyan_degree_1_major_3=major))
 
-    if industry:
+    if industry and industry != "all" :
       people = people.filter(industry=industry)
 
 

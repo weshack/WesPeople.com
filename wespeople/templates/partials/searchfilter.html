@@ -46,8 +46,8 @@ jQuery(document).ready(function($){
     var year = $("#year-select").val()
     var major = $("#major-select").val()
     var industry = $("#industry-select").val()
-    window.location = "/search?location=" + location + "?year=" + year + "?major="
-    + major + "?industry=" + industry;
+    window.location = "/search?location=" + location + "&year=" + year + "&major="
+    + major + "&industry=" + industry;
     e.preventDefault();
     });
 });
