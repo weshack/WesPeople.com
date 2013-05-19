@@ -101,8 +101,8 @@
     </div>
     <script type='text/javascript'>
       var mapId = 'ehc.map-shm0r7pp';
-var map = L.mapbox.map('map', mapId)
-    .setView([38.230062591265984, -98.50], 4);
+      var map = L.mapbox.map('map', mapId).setView([38.230062591265984, -98.50], 4);
+      map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp'));
     // map.addControl(L.mapbox.geocoderControl(mapId));
 </script> 
     <script type="text/javascript" src="/static/js/script.js"></script>

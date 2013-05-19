@@ -11,7 +11,7 @@ class PersonResource(ModelResource):
     exclude = ['preferred_email']
     #fields = ['name', 'location', 'preferred_class_year']
     filtering = {
-      'preferred_class_year': 'exact',
+      'preferred_class_year': ('exact', 'gte'),
       'state': ('exact', 'startswith'),
       'city': ('exact', 'startswith'),
       'wesleyan_degree_1_major_1': ('exact', 'startswith'),
