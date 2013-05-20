@@ -10,11 +10,17 @@ jQuery(document).ready(function($){
        $("#login-toggle").text('sign up now').stop();
     });
   });
+
   $("#footer-toggle").click(function(){
     $("#footer").slideToggle(300,function(){
-      $("#footer-teaser").css("bottom", "100px");
+
+     $("#footer-teaser a").css("color","white");
+     // $("#footer-teaser").animate({top: '80'}, 500);
+      // $("#footer-teaser a").append("<i class='icon-chevron-sign-down'></i>");
+      
     });
   });
+  // $(".chzn-select").chosen();
 });
 
 function load_people(url, filters) {
@@ -22,6 +28,7 @@ function load_people(url, filters) {
       jQuery.each(data.objects, function (key, val) {
         var lng = val.location.coordinates[0];
         var lat = val.location.coordinates[1];
+       
         var name = val.first_name + " " + val.last_name;
         var year = val.preferred_class_year;
         var degree1 = val.wesleyan_degree_1_major_1;

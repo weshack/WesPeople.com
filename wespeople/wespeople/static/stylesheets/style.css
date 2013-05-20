@@ -249,47 +249,18 @@ a:hover {
 /*---------- Buttons ----------*/
 /* line 125, ../sass/style.scss */
 a.button {
-  border: 1px solid #0d816c;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 0 0 #49d8be;
-  color: white;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
-  background-color: #1db89c;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1db89c), color-stop(100%, #0e8f77));
-  background-image: -webkit-linear-gradient(#1db89c, #0e8f77);
-  background-image: linear-gradient(#1db89c, #0e8f77);
-  padding: 7px 18px;
-  text-decoration: none;
-  text-shadow: 0 1px 0 #07725f;
-  background-clip: padding-box;
   text-align: center;
   background: #1db89c;
   border: none;
   box-shadow: none;
 }
-/* line 79, ../sass/bourbon/addons/_button.scss */
-a.button:hover:not(:disabled) {
-  box-shadow: inset 0 1px 0 0 #29c6a9;
-  cursor: pointer;
-  background-color: #1d9e87;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1d9e87), color-stop(100%, #0e806b));
-  background-image: -webkit-linear-gradient(#1d9e87, #0e806b);
-  background-image: linear-gradient(#1d9e87, #0e806b);
-}
-/* line 95, ../sass/bourbon/addons/_button.scss */
-a.button:active:not(:disabled) {
-  border: 1px solid #0d816c;
-  box-shadow: inset 0 0 8px 4px #0d725f, inset 0 0 8px 4px #0d725f, 0 1px 1px 0 #eeeeee;
-}
-/* line 38, ../sass/bourbon/addons/_button.scss */
-a.button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+/* line 130, ../sass/style.scss */
+a.button:active {
+  background: #1db89c;
+  box-shadow: none;
 }
 
-/* line 132, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 input.button {
   border: 1px solid #0d816c;
   border-radius: 3px;
@@ -329,7 +300,7 @@ input.button:disabled {
 }
 
 /*--------- Sign Up/Log In Forms -------*/
-/* line 137, ../sass/style.scss */
+/* line 140, ../sass/style.scss */
 .background-gradient {
   margin: -5px;
   padding-bottom: 160px;
@@ -341,15 +312,15 @@ input.button:disabled {
   background: linear-gradient( white, #efefef) left repeat;
 }
 
-/* line 147, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #landing-signin {
   margin-top: 30px;
 }
-/* line 149, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #landing-signin h1, #landing-signin h2, #landing-signin h3 {
   text-align: center;
 }
-/* line 151, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 #landing-signin header img {
   display: block;
   float: left;
@@ -364,16 +335,16 @@ input.button:disabled {
   margin-right: 0;
 }
 
-/* line 161, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 #initialSignLogIn {
   margin-top: 50px;
 }
-/* line 163, ../sass/style.scss */
+/* line 166, ../sass/style.scss */
 #initialSignLogIn input, #initialSignLogIn a.button {
   margin-bottom: 20px;
   display: block;
 }
-/* line 167, ../sass/style.scss */
+/* line 170, ../sass/style.scss */
 #initialSignLogIn .alternative {
   padding: 30px;
   background: white;
@@ -384,7 +355,7 @@ input.button:disabled {
   text-align: center;
 }
 
-/* line 178, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
@@ -392,26 +363,26 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   border-radius: 6px;
   border: 1px solid #bbbbbb;
 }
-/* line 182, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus {
   outline: none;
   box-shadow: 0 0 10px #9ecaed;
   border: 1px solid #9ecaed;
 }
 
-/* line 189, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], a.button {
   font-size: 16.18px;
   padding: 20px;
   width: 100%;
 }
 
-/* line 195, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 a.button {
   width: auto;
 }
 
-/* line 199, ../sass/style.scss */
+/* line 202, ../sass/style.scss */
 .box {
   background-color: #efefef;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #ececec));
@@ -423,17 +394,17 @@ a.button {
   height: 100%;
 }
 
-/* line 208, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 .signup-container {
   display: none;
 }
 
 /*------ Top Navigation Bar ------*/
-/* line 213, ../sass/style.scss */
+/* line 216, ../sass/style.scss */
 header#topBar {
   padding: 16px 2.12766%;
 }
-/* line 215, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 header#topBar a#logo img {
   float: left;
   height: auto;
@@ -450,7 +421,7 @@ header#topBar nav ul li {
   display: inline;
   list-style-type: none;
 }
-/* line 225, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 header#topBar nav ul li a.search-link {
   text-transform: uppercase;
   box-shadow: none;
@@ -460,41 +431,46 @@ header#topBar nav ul li a.search-link {
   color: #1db89c;
   padding: 12px 18px;
 }
-/* line 233, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 header#topBar nav ul li a.search-link:hover {
   background: #1db89c;
   color: white;
 }
-/* line 241, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
+header#topBar nav ul li a.search-link:active {
+  background: #1db89c;
+}
+/* line 247, ../sass/style.scss */
 header#topBar form {
+  z-index: 100000000;
   margin-bottom: 20px;
 }
-/* line 244, ../sass/style.scss */
+/* line 250, ../sass/style.scss */
 header#topBar form input {
   padding: 6px 20px;
 }
-/* line 247, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 header#topBar form ul {
   float: left;
 }
-/* line 249, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 header#topBar form ul li {
   list-style-type: none;
   display: inline-block;
   margin-right: 30px;
 }
-/* line 251, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 header#topBar form ul li label {
   color: #bbbbbb;
   display: block;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 259, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 header#topBar form ul li select {
   width: 100px;
 }
-/* line 265, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 header#topBar input.button {
   background: #1db89c;
   border: none;
@@ -507,60 +483,63 @@ header#topBar input.button {
   text-shadow: none;
   text-transform: uppercase;
 }
-/* line 276, ../sass/style.scss */
+/* line 282, ../sass/style.scss */
 header#topBar input.button:hover {
   background: #1aa289;
 }
 
-/* line 284, ../sass/style.scss */
+/* line 290, ../sass/style.scss */
 #content-body aside#list-view {
-  z-index: 1000000;
+  z-index: 1000;
   margin-top: 8px;
   background: rgba(37, 67, 89, 0.8);
   position: absolute;
   color: white;
   left: 0;
 }
-/* line 291, ../sass/style.scss */
+/* line 297, ../sass/style.scss */
 #content-body aside#list-view .title {
   margin-bottom: 0px;
   padding: 0 10px 0 10px;
 }
-/* line 295, ../sass/style.scss */
+/* line 301, ../sass/style.scss */
 #content-body aside#list-view .title h2 {
   padding: 10px 20px;
 }
 
 /*------- Footer ---------*/
-/* line 302, ../sass/style.scss */
+/* line 308, ../sass/style.scss */
 #footer-teaser {
   z-index: 100000000;
   position: absolute;
   bottom: 30px;
-  left: 30px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
-/* line 307, ../sass/style.scss */
+/* line 316, ../sass/style.scss */
 #footer-teaser a {
-  color: rgba(37, 67, 89, 0.8);
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  transition: all 1s ease-in;
   font-size: 31.41509px;
-}
-/* line 310, ../sass/style.scss */
-#footer-teaser a:hover {
   color: rgba(22, 40, 53, 0.8);
 }
 
-/* line 315, ../sass/style.scss */
+/* line 324, ../sass/style.scss */
 footer#footer {
   display: none;
+  height: 560px;
   padding: 0;
   position: absolute;
-  background: rgba(37, 67, 89, 0.6);
+  background: #254359;
   color: white;
   width: 100%;
   z-index: 1000;
   bottom: 0;
 }
-/* line 324, ../sass/style.scss */
+/* line 334, ../sass/style.scss */
 footer#footer .container {
   margin-top: 20px;
   text-align: center;
@@ -575,13 +554,13 @@ footer#footer .container nav ul li {
   display: inline;
   list-style-type: none;
 }
-/* line 331, ../sass/style.scss */
+/* line 341, ../sass/style.scss */
 footer#footer .container nav ul li a {
   color: white;
   font-weight: bold;
 }
 
-/* line 341, ../sass/style.scss */
+/* line 351, ../sass/style.scss */
 #map {
   bottom: 0px;
   width: 100%;
@@ -589,20 +568,20 @@ footer#footer .container nav ul li a {
   position: absolute;
 }
 
-/* line 348, ../sass/style.scss */
+/* line 358, ../sass/style.scss */
 #map, #list-view {
-  top: 130px;
+  top: 200px;
 }
 
 /*------ User Profile ------ */
-/* line 356, ../sass/style.scss */
+/* line 366, ../sass/style.scss */
 .map-holder {
   background-color: rgba(0, 0, 0, 0.4);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(26, 26, 26, 0.4)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
 }
-/* line 358, ../sass/style.scss */
+/* line 368, ../sass/style.scss */
 .map-holder .text-holder {
   *zoom: 1;
   display: block;
@@ -616,37 +595,37 @@ footer#footer .container nav ul li a {
 .map-holder .text-holder:after {
   clear: both;
 }
-/* line 360, ../sass/style.scss */
+/* line 370, ../sass/style.scss */
 .map-holder .text-holder h1, .map-holder .text-holder h2, .map-holder .text-holder h3, .map-holder .text-holder h4, .map-holder .text-holder p, .map-holder .text-holder a, .map-holder .text-holder small {
   color: white;
 }
-/* line 363, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 .map-holder .text-holder h1 {
   float: left;
 }
-/* line 364, ../sass/style.scss */
+/* line 374, ../sass/style.scss */
 .map-holder .text-holder h3 {
   float: right;
 }
 
-/* line 370, ../sass/style.scss */
+/* line 380, ../sass/style.scss */
 .profile-content ul li {
   list-style-type: none;
 }
-/* line 372, ../sass/style.scss */
+/* line 382, ../sass/style.scss */
 .profile-content ul li span.title-label {
   font-weight: bold;
 }
 
 /* ------- RESPONSIVE -----------*/
 @media screen and (max-width: 1170px) {
-  /* line 382, ../sass/style.scss */
+  /* line 392, ../sass/style.scss */
   #map, #list-view {
     top: 160px;
   }
 }
 @media screen and (max-width: 769px) {
-  /* line 382, ../sass/style.scss */
+  /* line 392, ../sass/style.scss */
   #map, #list-view {
     top: 200px;
   }

@@ -123,11 +123,14 @@ a{
 
 /*---------- Buttons ----------*/
 a.button{
-  @include button($teal);
   text-align: center;
   background: $teal;
   border:none;
   box-shadow:none;
+  &:active{
+    background: $teal;
+    box-shadow: none;
+  }
 }
 input.button{
   @include button($teal);
@@ -234,12 +237,15 @@ header#topBar{
             background: $teal;
             color: white;
           }
+          &:active{
+            background: $teal;
+          }
         }
       }
     }
   }
   form{
-    
+   z-index: 100000000; 
     margin-bottom: 20px;
     input{
       padding: 6px 20px;
@@ -282,7 +288,7 @@ header#topBar{
 
 #content-body{
   aside#list-view{
-    z-index: 1000000;
+    z-index: 1000;
       margin-top: 8px;
     background: rgba(37,67,89,0.8);
     position: absolute;
@@ -303,20 +309,24 @@ header#topBar{
   z-index: 100000000;
   position: absolute;
   bottom: 30px;
-  left:30px;
-  a{
-    color: $darkblue;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+    a{
+    @include transition(all 1s ease-in);
     font-size: golden-ratio(12px,2);
-    &:hover{
       color: darken($darkblue,10%);
     }
+
   }
-}
+   
 footer#footer{
   display:none;
+  height: 560px;
   padding:0;
   position: absolute;
-  background: rgba(37,67,89,0.6);
+  background: rgba(37,67,89,1.0);
   color: white;
   width: 100%;
   z-index: 1000;
@@ -346,7 +356,7 @@ footer#footer{
 }
 
 #map, #list-view{
-  top:130px;
+  top:200px;
 }
 
 /*------ User Profile ------ */
