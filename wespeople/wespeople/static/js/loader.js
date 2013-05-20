@@ -38,12 +38,11 @@ function load_people(url, filters) {
     map.addLayer(markers); 
   })
   .done(function(data) {
-    console.log( "second success" ); 
     var next = data.meta.next;
     if (next !== null) {
       load_people(next, "");
     }
   })
-  .fail(function() { console.log( "error" ); })
-  .always(function() { console.log( "complete" ); });
+  .fail(function() {})
+  .always(function() {});
 };

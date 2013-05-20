@@ -71,6 +71,6 @@ function load_people(url, filters) {
       load_people(next, "");
     } else { spinner.stop(); $("span#spinner").hide('slow'); $("#location").css("padding-left", ""); }
   })
-  .fail(function() { console.log( "error" ); })
+  .fail(function() {})
   .always(function() {});
 };
