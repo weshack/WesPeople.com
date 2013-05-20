@@ -14,17 +14,17 @@
           <aside id="list-view">
           <div class="title">
             <span id="spinner" style="position: absolute; left: 20px; top: 30px;"></span><h5 id="location" style="padding-left: 30px;"><span id="num_people">0</span> people found{% if location %} in<span id="location"> {{ location }}</span>{% endif %}.</h5>
-          </div> 
-          </div> 
+          </div>
 
           </aside>
-          {% include "partials/footer.html" %} 
+          </div>
+          {% include "partials/footer.html" %}
 
     </div>
       {% block js %}
       {% endblock %}
 
-<script>
+<script type="text/javascript">
 var opts = {
   lines: 8, // The number of lines to draw
   length: 1, // The length of each line
