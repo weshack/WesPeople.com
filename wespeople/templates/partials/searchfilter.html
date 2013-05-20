@@ -1,11 +1,11 @@
 {% block searchfilter %}
 
 <form method="get" action="/search/" id="location-search">
-  <input type="text" id="location-search-input" placeholder="Search by city and state.">
+  <input type="text" id="location-search-input" placeholder="Search by location.">
   <ul>
     <li>
     <label>Class Year:</label>
-    <select id="year-select" name="year">
+    <select id="year-select" name="year" data-placeholder="Choose year..." class="chzn-select">
       <option value="all">All Grad Year</option>
       {% for year in years %}
       <option value="{{ year }}">{{ year }}</option>
@@ -16,7 +16,7 @@
 
     <li>
     <label>Major:</label>
-    <select id="major-select" name="major">
+    <select id="major-select" name="major" class="chzn-select">
       <option value="all">All Majors</option>
       {% for major in majors %}
       <option value="{{major }}">{{ major }}</option>
@@ -25,7 +25,7 @@
     </li>
     <li>
     <label>Industry/Career:</label>
-    <select id="industry-select" name="industry">
+    <select id="industry-select" name="industry" class="chzn-select">
       <option value="all">All Careers</option>
       {% for i in industries %}
       <option value="{{ i }}">{{ i }}</option>

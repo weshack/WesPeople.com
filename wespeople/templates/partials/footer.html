@@ -1,16 +1,10 @@
 {% block footer %}
 <div id="footer-teaser">
-  <a href="#" id="footer-toggle"><i class="icon-info"></i></a>
+  <a href="#" id="footer-toggle"><i class="icon-chevron-sign-up"></i></a>
 </div>
 <footer id="footer">
-    <div class="container">
-      <nav>
-        <ul>
-          <li>
-            <a href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
+<div class="container">
+      {% include "maps/about.html" %}
     </div>
   </footer>
 {% endblock %}
