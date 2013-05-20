@@ -1,28 +1,5 @@
-{% extends "base.html" %}
-  {% block content %}
-    <div id="main-maps">
-      <header id="topBar" class="container">
-      <a href="http://wespeople.com/" id="logo"><img src="/static/img/wespeople-logo.png"></a>
-
-      {% include "partials/searchfilter.html" %}
-      </header>
-
-        <div id="content-body">
-          <aside id="list-view">
-          <div class="title">
-            <h5><span id="num_people">0</span> people found{% if location %} in<span id="location"> {{ location }}</span>{% endif %}.</h5>
-          </div> 
-
-          </aside>
-        <div id="map"></div>
-
-      <footer>
-      <div class="container">
-        <p>A WesHack 2013 project by 4 people.</p>
-      </div>
-      </footer>
-    </div>
-
+{% extends "maps/map.html" %}
+  {% block js %}
     <script type='text/javascript'>
       var mapId = 'ehc.map-shm0r7pp';
 
@@ -101,6 +78,3 @@
 
 </script> 
     {% endblock %}
-</body>
-</html>
-

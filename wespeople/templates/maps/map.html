@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+  {% block content %}
+    <div id="main-maps">
+      <header id="topBar" class="container">
+      <a href="http://wespeople.com/" id="logo"><img src="/static/img/wespeople-logo.png"></a>
+
+      {% include "partials/searchfilter.html" %}
+
+        </header>
+        
+        <div id="map"></div>
+        <div id="content-body">
+          <aside id="list-view">
+          <div class="title">
+            <h5><span id="num_people">0</span> people found{% if location %} in<span id="location"> {{ location }}</span>{% endif %}.</h5>
+          </div> 
+          </div> 
+
+          </aside>
+          {% include "partials/footer.html" %} 
+
+    </div>
+      {% block js %}
+      {% endblock %}
+    {% endblock %}
+</body>
+</html>
+

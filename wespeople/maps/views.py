@@ -117,7 +117,7 @@ def search(request):
     template_values = {'people': people, 'location' : location, 'ids' : ids,
         'years' : years, 'majors': majors, 'industries' : industries, 'lat' : lat, 'lng': lng}
 
-    return render_to_response('maps/near_results.html', template_values)
+    return render_to_response('maps/search_results.html', template_values)
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
