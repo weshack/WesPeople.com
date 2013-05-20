@@ -13,6 +13,10 @@ $darkblue: rgba(37,67,89,0.8);
 // Grid
 .container{
   @include outer-container;
+  .about-content{
+    @include span-columns(8 of 12);
+    @include shift(2);
+  }
   #landing-signin{
     @include span-columns(6 of 12);
     @include shift(3);
@@ -315,6 +319,29 @@ input.button{
     }
   }
 }
+
+.about-content{
+  h1,h2,h3, p{
+    text-align: left;
+  }
+  a{
+    color: lighten($teal,20%);
+    &:hover{
+      color:$teal;
+    }
+  }
+  p.last{
+    padding-bottom: 60px;
+  }
+  img{
+    float: left;
+    margin-right: 20px;
+    width: 90px;
+    height: auto;
+  }
+  @include inlineBar(left, 30px);
+}
+
 /*------- Footer ---------*/
 #footer-teaser{
   z-index: 100000000;
@@ -334,7 +361,8 @@ input.button{
    
 footer#footer{
   display:none;
-  height: 660px;
+  height: 700px;
+  overflow: scroll;
   padding:0;
   position: absolute;
   background: rgba(37,67,89,1.0);

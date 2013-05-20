@@ -12,12 +12,10 @@ jQuery(document).ready(function($){
   });
 
   $("#footer-toggle").click(function(){
-    $("#footer").slideToggle(300,function(){
-
-     $("#footer-teaser a").css("color","white");
-     // $("#footer-teaser").animate({top: '80'}, 500);
-      // $("#footer-teaser a").append("<i class='icon-chevron-sign-down'></i>");
-      
+    $("#footer-teaser a").css("color","white");
+    $("#footer").slideToggle(function(){
+          }, function(){
+      $("#footer-teaser a").css("color","black");
     });
   });
   // $(".chzn-select").chosen();
