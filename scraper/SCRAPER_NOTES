@@ -6,3 +6,10 @@ Run the scraper with:
 
     `scrapy crawl wesconnect -o outputfile.csv -t csv --logfile=logfile.log`
 
+NOTICE AND DISCLAIMER - Running this code is illegal. It is purely theoretical and should not be actually run. Please read http://wesconnect.wesleyan.edu/s/1318/index.aspx?sid=1318&gid=1&pgid=292 particularly:
+
+Under Section 5 "Member Conduct", items 11 and 14 read:
+
+By way of example, and not as a limitation, you agree that when using the communication services, you will not:
+11. Harvest or otherwise collect information about others, including e-mail addresses.
+14.Use, download or otherwise copy, or provide (whether or not for a fee) to a person or entity any directory of users of the services or other user or usage information or any portion thereof.
