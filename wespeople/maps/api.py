@@ -22,5 +22,5 @@ class PersonResource(ModelResource):
       'pk': ('exact', 'gte', "range"),
     }
 
-    limit = 1000
+    limit = 348
     cache =  SimpleCache(timeout=60)

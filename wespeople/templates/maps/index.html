@@ -5,9 +5,6 @@
       var map = L.mapbox.map('map', mapId)
         .setView([38.230062591265984, -98.50], 4)
         .addControl(L.control.zoom({position: 'topright'}));
-      {# map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp')); #}
-      
-
 
       var from_year;
       var to_year;
@@ -26,7 +23,7 @@
         } else if (from_year) {
           var url = "/api/geoperson?preferred_class_year=" + from_year;
         } else {
-          var url = "/api/geoperson?preferred_class_year__gte=2000"
+          var url = "/api/geoperson"
         }
         load_people(url, "");
       });

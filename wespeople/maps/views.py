@@ -108,8 +108,8 @@ def search(request):
 
 
 
-    # slice limit 80
-    people = people[0:80]
+    # slice limit 100
+    people = people[0:100]
 
 
     ids = [p.pk for p in people]
