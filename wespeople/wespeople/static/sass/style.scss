@@ -299,11 +299,24 @@ header#topBar{
   }
 }
 /*------- Footer ---------*/
+#footer-teaser{
+  z-index: 100000000;
+  position: absolute;
+  bottom: 30px;
+  left:30px;
+  a{
+    color: $darkblue;
+    font-size: golden-ratio(12px,2);
+    &:hover{
+      color: darken($darkblue,10%);
+    }
+  }
+}
 footer#footer{
   display:none;
   padding:0;
   position: absolute;
-  background: $darkblue;
+  background: rgba(37,67,89,0.6);
   color: white;
   width: 100%;
   z-index: 1000;
@@ -312,10 +325,13 @@ footer#footer{
     margin-top: 20px;
     text-align: center;
     nav{
-      @include inlineBar(right, 10px);
+      @include inlineBar(left, 10px);
       ul{
-        li:last-child{
-          margin-right: 0;
+        li{
+          a{
+            color: white;
+            font-weight: bold;
+          }
         }
       }
     }

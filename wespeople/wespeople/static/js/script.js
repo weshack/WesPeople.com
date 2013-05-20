@@ -10,6 +10,11 @@ jQuery(document).ready(function($){
        $("#login-toggle").text('sign up now').stop();
     });
   });
+  $("#footer-toggle").click(function(){
+    $("#footer").slideToggle(300,function(){
+      $("#footer-teaser").css("bottom", "100px");
+    });
+  });
 });
 
 function load_people(url, filters) {
