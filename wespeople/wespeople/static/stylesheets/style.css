@@ -515,64 +515,76 @@ header#topBar input.button:hover {
 /* line 284, ../sass/style.scss */
 #content-body aside#list-view {
   z-index: 1000000;
-  background: #254359;
+  margin-top: 8px;
+  background: rgba(37, 67, 89, 0.8);
   position: absolute;
   color: white;
   left: 0;
 }
-/* line 290, ../sass/style.scss */
+/* line 291, ../sass/style.scss */
 #content-body aside#list-view .title {
-  margin-top: 0px;
   margin-bottom: 0px;
-  padding: 0;
+  padding: 0 10px 0 10px;
 }
 /* line 295, ../sass/style.scss */
 #content-body aside#list-view .title h2 {
   padding: 10px 20px;
 }
 
+/*------- Footer ---------*/
 /* line 302, ../sass/style.scss */
-footer {
+footer#footer {
+  display: none;
+  padding: 0;
+  position: absolute;
   background: rgba(37, 67, 89, 0.8);
   color: white;
+  width: 100%;
+  z-index: 1000;
+  bottom: 0;
+}
+/* line 311, ../sass/style.scss */
+footer#footer .container {
+  margin-top: 20px;
+  text-align: center;
 }
 /* line 31, ../sass/style.scss */
-footer nav ul {
+footer#footer .container nav ul {
   float: right;
 }
 /* line 33, ../sass/style.scss */
-footer nav ul li {
+footer#footer .container nav ul li {
   margin-left: 10px;
   display: inline;
   list-style-type: none;
 }
-/* line 308, ../sass/style.scss */
-footer nav ul li:last-child {
+/* line 317, ../sass/style.scss */
+footer#footer .container nav ul li:last-child {
   margin-right: 0;
 }
 
-/* line 314, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 #map {
-  bottom: 40px;
+  bottom: 0px;
   width: 100%;
   border-top: 8px solid rgba(37, 67, 89, 0.8);
   position: absolute;
 }
 
-/* line 321, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 #map, #list-view {
   top: 130px;
 }
 
 /*------ User Profile ------ */
-/* line 329, ../sass/style.scss */
+/* line 340, ../sass/style.scss */
 .map-holder {
   background-color: rgba(0, 0, 0, 0.4);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(26, 26, 26, 0.4)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
 }
-/* line 331, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
 .map-holder .text-holder {
   *zoom: 1;
   display: block;
@@ -586,48 +598,37 @@ footer nav ul li:last-child {
 .map-holder .text-holder:after {
   clear: both;
 }
-/* line 333, ../sass/style.scss */
+/* line 344, ../sass/style.scss */
 .map-holder .text-holder h1, .map-holder .text-holder h2, .map-holder .text-holder h3, .map-holder .text-holder h4, .map-holder .text-holder p, .map-holder .text-holder a, .map-holder .text-holder small {
   color: white;
 }
-/* line 336, ../sass/style.scss */
+/* line 347, ../sass/style.scss */
 .map-holder .text-holder h1 {
   float: left;
 }
-/* line 337, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 .map-holder .text-holder h3 {
   float: right;
 }
 
-/* line 343, ../sass/style.scss */
+/* line 354, ../sass/style.scss */
 .profile-content ul li {
   list-style-type: none;
 }
-/* line 345, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 .profile-content ul li span.title-label {
   font-weight: bold;
 }
 
-/*------- Footer ---------*/
-/* line 353, ../sass/style.scss */
-footer .container {
-  position: absolute;
-  bottom: 0;
-  z-index: 1000;
-  margin-top: 40px;
-  border-top: 1px solid #bbbbbb;
-  text-align: center;
-}
-
 /* ------- RESPONSIVE -----------*/
 @media screen and (max-width: 1170px) {
-  /* line 364, ../sass/style.scss */
+  /* line 366, ../sass/style.scss */
   #map, #list-view {
     top: 160px;
   }
 }
 @media screen and (max-width: 769px) {
-  /* line 364, ../sass/style.scss */
+  /* line 366, ../sass/style.scss */
   #map, #list-view {
     top: 200px;
   }
