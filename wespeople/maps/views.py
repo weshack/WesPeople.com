@@ -1,4 +1,5 @@
 # Create your views here.
+from django.views.decorators.cache import cache_page
 from django.shortcuts import render_to_response, redirect, render
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.db import models
@@ -17,6 +18,7 @@ import simplejson
 from maps.models import Person
 from maps.models import AuthUser
 
+@cache_page(60 * 15)
 def index(request):
     """
     Display the main index map page, with option to filter by year
@@ -36,6 +38,7 @@ def index(request):
 
     return render_to_response('maps/index.html', template_values)
 
+@cache_page(60 * 15)
 def filter_year(request, from_year, to_year=""):
     """
     Filter by graduation years
@@ -44,10 +47,12 @@ def filter_year(request, from_year, to_year=""):
     template_values = {'from_year': from_year, 'to_year' : to_year}
 
     return render_to_response('maps/index.html', template_values)
+@cache_page(60 * 15)
 def about(request):
 
     return render_to_response('maps/about.html')
 
+@cache_page(60 * 15)
 def search(request):
     """
     Location string to geocode from mapquest. Distance in miles

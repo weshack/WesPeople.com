@@ -2,6 +2,7 @@ from tastypie.contrib.gis.resources import ModelResource
 from maps.models import Person
 from tastypie.resources import ALL, ALL_WITH_RELATIONS
 from tastypie.authorization import Authorization, ReadOnlyAuthorization
+from tastypie.cache import SimpleCache
 
 class PersonResource(ModelResource):
   class Meta:
@@ -22,12 +23,4 @@ class PersonResource(ModelResource):
     }
 
     limit = 1000
-    #list_allowed_methods = ['get', 'post']
-    #authorization = ReadOnlyAuthorization
-
-    #def get_object_list(self, request):
-    #  return super(PersonResource, self).get_object_list(request).filter(location__isnull=False)
-
-    #filtering = {
-    #    'first_name': ALL,
-    #    }
+    cache =  SimpleCache(timeout=60)
