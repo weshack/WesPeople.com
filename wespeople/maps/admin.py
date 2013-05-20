@@ -1,7 +1,7 @@
 from django.contrib.gis import admin
 from models import Person
 
-#class PersonAdmin(admin.GeoModelAdmin):
+#class PersonAdmin(admin.UserenaAdmin):
 #  #fieldsets = (
 #  #  (None, {
 #  #    'fields': (('last_name', 'first_name', 'nickname'),
