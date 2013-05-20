@@ -59,14 +59,13 @@ function load_people(url, filters) {
     map.addLayer(markers); 
   })
   .done(function(data) {
-    console.log( "second success" ); 
     if (data.meta) {
       var next = data.meta.next;
     }
     if (next !== null) {
       load_people(next, "");
-    }
+    } else { spinner.stop(); $("span#spinner").hide('slow'); $("#location").css("padding-left", ""); }
   })
   .fail(function() { console.log( "error" ); })
-  .always(function() { console.log( "complete" ); });
+  .always(function() {});
 };

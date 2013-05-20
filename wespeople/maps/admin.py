@@ -20,7 +20,7 @@ from models import Person
 #  #    )
 #  #  }),
 #  #)
-#  list_display = ('last_name', 'first_name', 'name', 'preferred_class_year')
+#  #list_display = ('last_name', 'first_name', 'name', 'preferred_class_year')
 #
-#admin.site.unregister(Person)
-#admin.site.register(Person, PersonAdmin)
+##admin.site.unregister(Person)
+##admin.site.register(Person, PersonAdmin)

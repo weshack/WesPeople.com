@@ -73,6 +73,8 @@
         for (var i in ids){
           load_one_person("/api/geoperson/", ids[i]);
         }
+       spinner.stop(); $("span#spinner").hide('slow'); $("#location").css("padding-left", ""); 
+
       });
 
 </script> 
