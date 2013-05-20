@@ -48,9 +48,6 @@ def filter_year(request, from_year, to_year=""):
 
     return render_to_response('maps/index.html', template_values)
 @cache_page(60 * 15)
-def about(request):
-
-    return render_to_response('maps/about.html')
 
 @cache_page(60 * 15)
 def search(request):
