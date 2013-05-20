@@ -70,7 +70,7 @@ class Person(UserenaBaseProfile):
 
   user = models.OneToOneField(User, null=True, blank=True, unique=True, verbose_name=_('user'))
 
-  sites = models.ManyToManyField(Site)
+  #sites = models.ManyToManyField(Site)
 
   def makeName(self):
     n = self.name.split(',')
