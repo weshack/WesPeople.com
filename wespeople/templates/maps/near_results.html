@@ -6,10 +6,13 @@
 
       {% include "partials/searchfilter.html" %}
       </header>
+
+        <div id="content-body">
           <aside id="list-view">
           <div class="title">
-            <h2><span id="num_people">0</span> people found in Middletown, CT.</h2>
+            <h5><span id="num_people">0</span> people found{% if location %} in<span id="location"> {{ location }}</span>{% endif %}.</h5>
           </div> 
+
           </aside>
         <div id="map"></div>
 
