@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.gis.db import models
 from django.utils.translation import ugettext as _
 from userena.models import UserenaBaseProfile
+from django.contrib.sites.models import Site
 
 class PersonLocationManager(models.GeoManager):
   def get_query_set(self):
@@ -68,6 +69,8 @@ class Person(UserenaBaseProfile):
   names = PersonNameManager()
 
   user = models.OneToOneField(User, null=True, blank=True, unique=True, verbose_name=_('user'))
+
+  sites = models.ManyToManyField(Site)
 
   def makeName(self):
     n = self.name.split(',')

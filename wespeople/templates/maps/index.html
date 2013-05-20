@@ -10,9 +10,10 @@
         
         <div id="map"></div>
         <div id="content-body">
+          <aside id="list-view">
           <div class="title">
-            <h2><span id="num_people">0</span> people found in Middletown, CT.</h2>
-        </div> 
+            <h5><span id="num_people">0</span> people found in Middletown, CT.</h5>
+          </div> 
 
           </aside>
           {% include "partials/footer.html" %} 
@@ -20,9 +21,10 @@
     </div>
     <script type='text/javascript'>
       var mapId = 'ehc.map-shm0r7pp';
-      var map = L.mapbox.map('map', mapId).setView([38.230062591265984, -98.50], 4);
+      var map = L.mapbox.map('map', mapId)
+        .setView([38.230062591265984, -98.50], 4)
+        .addControl(L.control.zoom({position: 'topright'}));
       {# map.addControl(L.mapbox.geocoderControl('ehc.map-shm0r7pp')); #}
-      {# map.addControl(L.control.zoom('topright')).addTo(map); #}
       
 
 

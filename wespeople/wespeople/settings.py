@@ -129,7 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    #'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
@@ -196,6 +196,7 @@ CACHES = {
       }
     }
 
+SITE_ID = 1
 
 
 from prod_settings import *
