@@ -10,3 +10,7 @@ Then you can use pip to install the required packages form the REQUIREMENTS file
 
     `pip install -r REQUIREMENTS`
 
+This is a django project. All the code is publicly available through our GitHub account.
+
+All the data used in this app is accessible through our REST API. See the api.py file in the source for more information.
+
