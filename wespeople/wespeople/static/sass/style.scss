@@ -278,7 +278,7 @@ margin-right: 30px;
         display: inline-block;
         
         select{
-          width: 100px;
+          width: 103px;
         }
       }
     }
@@ -437,6 +437,9 @@ $lightgradient: lighten($darkgradient, 10%);
 #map,#list-view{
   @include media(max-width 1170px){
     top: 160px;
+  }
+  @include media(max-width 1055px){
+    top: 200px;
   }
   @include media(max-width 769px){
     top: 240px;

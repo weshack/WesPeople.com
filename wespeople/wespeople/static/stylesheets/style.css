@@ -500,7 +500,7 @@ header#topBar form ul li label {
 }
 /* line 280, ../sass/style.scss */
 header#topBar form ul li select {
-  width: 100px;
+  width: 103px;
 }
 /* line 285, ../sass/style.scss */
 header#topBar form input.button {
@@ -694,6 +694,12 @@ footer#footer .container nav ul li a {
   /* line 437, ../sass/style.scss */
   #map, #list-view {
     top: 160px;
+  }
+}
+@media screen and (max-width: 1055px) {
+  /* line 437, ../sass/style.scss */
+  #map, #list-view {
+    top: 200px;
   }
 }
 @media screen and (max-width: 769px) {
