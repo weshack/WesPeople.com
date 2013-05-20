@@ -52,21 +52,22 @@ header#topBar{
     @include shift(2);
   }
   form{
-    @include span-columns(8);
-    @include shift(1);
+    // @include span-columns(12);
+    // @include shift(1);
+    @include row();
     @include omega();
     @include media($tablet){
       @include span-columns(6);
     }
     input[type="text"]{
-      // @include span-columns(8 of 8);
-      @include row();
+      @include span-columns(3);
       // @include omega();
     }
     ul{
+      float: right;
       @include omega();
       @include fill-parent;
-      @include span-columns(6 of 8);
+      @include span-columns(6);
       li{
         // @include omega(3n);
         // @include span-columns(2);
@@ -222,9 +223,11 @@ header#topBar{
     width: 100%;
   }
   nav{
+
     @include inlineBar(right, 40px);
     ul{
-      li{
+      position: relative;
+              li{
         a.search-link{
           text-transform: uppercase;
           box-shadow: none;
@@ -245,12 +248,14 @@ header#topBar{
     }
   }
   form{
+    margin-top: 0px;
    z-index: 100000000; 
     margin-bottom: 20px;
     input{
       padding: 6px 20px;
     }
     ul{
+      margin-top: 0px;
       float: left;
       li{
         list-style-type: none;
@@ -267,23 +272,29 @@ header#topBar{
         }
       }
     }
-}
-    input.button{
+input.button{
+      margin-top: 0px;
       background: $teal;
       border:none;
       float: right;
       font-size: golden-ratio(10px, 1);
       font-weight: 200;
       font-weight: bold;
-      margin-top: 10px;
       padding: 10px 8px;
       text-shadow: none;
       text-transform: uppercase;
       &:hover{
         background: darken($teal, 5%);
       }
+       &:active{
+        background: darken($teal, 5%);
+        box-shadow: none;
+      }
+
   }
 
+}
+    
 }
 
 #content-body{
@@ -323,7 +334,7 @@ header#topBar{
    
 footer#footer{
   display:none;
-  height: 560px;
+  height: 660px;
   padding:0;
   position: absolute;
   background: rgba(37,67,89,1.0);
@@ -356,7 +367,7 @@ footer#footer{
 }
 
 #map, #list-view{
-  top:200px;
+  top:140px;
 }
 
 /*------ User Profile ------ */

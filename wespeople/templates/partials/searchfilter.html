@@ -1,11 +1,11 @@
 {% block searchfilter %}
 
 <form method="get" action="/search/" id="location-search">
-  <input type="text" id="location-search-input" placeholder="Search by city and state.">
+  <input type="text" id="location-search-input" placeholder="Search by location.">
   <ul>
     <li>
     <label>Class Year:</label>
-    <select id="year-select" name="year" data-placeholder="Choose year..." multiple class="chzn-select">
+    <select id="year-select" name="year" data-placeholder="Choose year..." class="chzn-select">
       <option value="all">All Grad Year</option>
       {% for year in years %}
       <option value="{{ year }}">{{ year }}</option>
