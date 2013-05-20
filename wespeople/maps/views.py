@@ -47,7 +47,6 @@ def filter_year(request, from_year, to_year=""):
     template_values = {'from_year': from_year, 'to_year' : to_year}
 
     return render_to_response('maps/index.html', template_values)
-@cache_page(60 * 15)
 
 @cache_page(60 * 15)
 def search(request):
