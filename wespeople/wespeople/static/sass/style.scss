@@ -61,7 +61,7 @@ header#topBar{
     @include row();
     @include omega();
     @include media($tablet){
-      @include span-columns(6);
+      @include span-columns(7);
     }
     input[type="text"]{
       @include span-columns(3);
@@ -269,8 +269,14 @@ header#topBar{
           font-weight: bold;
           text-transform: uppercase;
         }
+       @include media($tablet){
+          @include span-columns(7);
+          margin-right: 10px;
+        }
+margin-right: 30px;
+
         display: inline-block;
-        margin-right: 30px;
+        
         select{
           width: 100px;
         }
@@ -346,7 +352,7 @@ input.button{
 #footer-teaser{
   z-index: 100000000;
   position: absolute;
-  bottom: 30px;
+  bottom: 16px;
   text-align: center;
   width: 100%;
   display: block;
@@ -433,7 +439,7 @@ $lightgradient: lighten($darkgradient, 10%);
     top: 160px;
   }
   @include media(max-width 769px){
-    top: 200px;
+    top: 240px;
   }
 }
 

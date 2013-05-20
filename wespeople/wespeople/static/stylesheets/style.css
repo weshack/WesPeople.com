@@ -136,7 +136,7 @@ header#topBar form:after {
     display: block;
     float: left;
     margin-right: 3.22581%;
-    width: 74.19355%;
+    width: 87.09677%;
   }
   /* line 41, ../sass/neat/grid/_span-columns.scss */
   header#topBar form:last-child {
@@ -474,8 +474,8 @@ header#topBar form ul {
 /* line 264, ../sass/style.scss */
 header#topBar form ul li {
   list-style-type: none;
-  display: inline-block;
   margin-right: 30px;
+  display: inline-block;
 }
 /* line 266, ../sass/style.scss */
 header#topBar form ul li label {
@@ -484,11 +484,25 @@ header#topBar form ul li label {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 274, ../sass/style.scss */
+@media screen and (max-width: 768px) {
+  /* line 264, ../sass/style.scss */
+  header#topBar form ul li {
+    display: block;
+    float: left;
+    margin-right: 3.22581%;
+    width: 87.09677%;
+    margin-right: 10px;
+  }
+  /* line 41, ../sass/neat/grid/_span-columns.scss */
+  header#topBar form ul li:last-child {
+    margin-right: 0;
+  }
+}
+/* line 280, ../sass/style.scss */
 header#topBar form ul li select {
   width: 100px;
 }
-/* line 279, ../sass/style.scss */
+/* line 285, ../sass/style.scss */
 header#topBar form input.button {
   margin-top: 0px;
   background: #1db89c;
@@ -501,17 +515,17 @@ header#topBar form input.button {
   text-shadow: none;
   text-transform: uppercase;
 }
-/* line 290, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 header#topBar form input.button:hover {
   background: #1aa289;
 }
-/* line 293, ../sass/style.scss */
+/* line 299, ../sass/style.scss */
 header#topBar form input.button:active {
   background: #1aa289;
   box-shadow: none;
 }
 
-/* line 305, ../sass/style.scss */
+/* line 311, ../sass/style.scss */
 #content-body aside#list-view {
   z-index: 1000;
   margin-top: 8px;
@@ -520,33 +534,33 @@ header#topBar form input.button:active {
   color: white;
   left: 0;
 }
-/* line 312, ../sass/style.scss */
+/* line 318, ../sass/style.scss */
 #content-body aside#list-view .title {
   margin-bottom: 0px;
   padding: 0 10px 0 10px;
 }
-/* line 316, ../sass/style.scss */
+/* line 322, ../sass/style.scss */
 #content-body aside#list-view .title h2 {
   padding: 10px 20px;
 }
 
-/* line 324, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 .about-content h1, .about-content h2, .about-content h3, .about-content p {
   text-align: left;
 }
-/* line 327, ../sass/style.scss */
+/* line 333, ../sass/style.scss */
 .about-content a {
   color: #57e4cb;
 }
-/* line 329, ../sass/style.scss */
+/* line 335, ../sass/style.scss */
 .about-content a:hover {
   color: #1db89c;
 }
-/* line 333, ../sass/style.scss */
+/* line 339, ../sass/style.scss */
 .about-content p.last {
   padding-bottom: 60px;
 }
-/* line 336, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
 .about-content img {
   float: left;
   margin-right: 20px;
@@ -565,17 +579,17 @@ header#topBar form input.button:active {
 }
 
 /*------- Footer ---------*/
-/* line 346, ../sass/style.scss */
+/* line 352, ../sass/style.scss */
 #footer-teaser {
   z-index: 100000000;
   position: absolute;
-  bottom: 30px;
+  bottom: 16px;
   text-align: center;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 354, ../sass/style.scss */
+/* line 360, ../sass/style.scss */
 #footer-teaser a {
   -webkit-transition: all 1s ease-in;
   -moz-transition: all 1s ease-in;
@@ -584,7 +598,7 @@ header#topBar form input.button:active {
   color: rgba(22, 40, 53, 0.8);
 }
 
-/* line 362, ../sass/style.scss */
+/* line 368, ../sass/style.scss */
 footer#footer {
   display: none;
   height: 700px;
@@ -597,7 +611,7 @@ footer#footer {
   z-index: 1000;
   bottom: 0;
 }
-/* line 373, ../sass/style.scss */
+/* line 379, ../sass/style.scss */
 footer#footer .container {
   margin-top: 20px;
   text-align: center;
@@ -612,13 +626,13 @@ footer#footer .container nav ul li {
   display: inline;
   list-style-type: none;
 }
-/* line 380, ../sass/style.scss */
+/* line 386, ../sass/style.scss */
 footer#footer .container nav ul li a {
   color: white;
   font-weight: bold;
 }
 
-/* line 390, ../sass/style.scss */
+/* line 396, ../sass/style.scss */
 #map {
   bottom: 0px;
   width: 100%;
@@ -626,20 +640,20 @@ footer#footer .container nav ul li a {
   position: absolute;
 }
 
-/* line 397, ../sass/style.scss */
+/* line 403, ../sass/style.scss */
 #map, #list-view {
   top: 140px;
 }
 
 /*------ User Profile ------ */
-/* line 405, ../sass/style.scss */
+/* line 411, ../sass/style.scss */
 .map-holder {
   background-color: rgba(0, 0, 0, 0.4);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(26, 26, 26, 0.4)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.4));
 }
-/* line 407, ../sass/style.scss */
+/* line 413, ../sass/style.scss */
 .map-holder .text-holder {
   *zoom: 1;
   display: block;
@@ -653,38 +667,38 @@ footer#footer .container nav ul li a {
 .map-holder .text-holder:after {
   clear: both;
 }
-/* line 409, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 .map-holder .text-holder h1, .map-holder .text-holder h2, .map-holder .text-holder h3, .map-holder .text-holder h4, .map-holder .text-holder p, .map-holder .text-holder a, .map-holder .text-holder small {
   color: white;
 }
-/* line 412, ../sass/style.scss */
+/* line 418, ../sass/style.scss */
 .map-holder .text-holder h1 {
   float: left;
 }
-/* line 413, ../sass/style.scss */
+/* line 419, ../sass/style.scss */
 .map-holder .text-holder h3 {
   float: right;
 }
 
-/* line 419, ../sass/style.scss */
+/* line 425, ../sass/style.scss */
 .profile-content ul li {
   list-style-type: none;
 }
-/* line 421, ../sass/style.scss */
+/* line 427, ../sass/style.scss */
 .profile-content ul li span.title-label {
   font-weight: bold;
 }
 
 /* ------- RESPONSIVE -----------*/
 @media screen and (max-width: 1170px) {
-  /* line 431, ../sass/style.scss */
+  /* line 437, ../sass/style.scss */
   #map, #list-view {
     top: 160px;
   }
 }
 @media screen and (max-width: 769px) {
-  /* line 431, ../sass/style.scss */
+  /* line 437, ../sass/style.scss */
   #map, #list-view {
-    top: 200px;
+    top: 240px;
   }
 }

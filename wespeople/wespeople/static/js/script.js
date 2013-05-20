@@ -15,7 +15,7 @@ jQuery(document).ready(function($){
     $("#footer-teaser a").css("color","white");
     $("#footer").slideToggle(function(){
           }, function(){
-      $("#footer-teaser a").css("color","black");
+      $("#footer-teaser a").css("color","#0b1e2b");
     });
   });
   // $(".chzn-select").chosen();
